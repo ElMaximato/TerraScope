@@ -1,0 +1,18 @@
+{
+  "year": 2024,
+  "retrievedAt": "2026-11-07T22:31:07.862Z",
+  "hash": "844d03c4d4c6feb92c00a10f3426cbc3a1dd1c6662ebfe583808b866d704f9a7",
+  "fileHashes": {
+    "tracts-tiger.geojson": "f1e008693eb1c48864c7ac574c4b9a9434f608db23c4ac22a46445d3b39f3bdc",
+    "place-tiger.geojson": "2a1cecf0de37a140d5aea569838851325ac010ee7c4e029b58884edd05db64e7",
+    "acs-tracts.json": "460d5006e37404a3f7ffac004051a7590b5e77c1622db8378c84392726dd26a4",
+    "acs-place.json": "9d399146fc252b1095847caed2dab138a5147d5d20913d1524b939d5603c59a4"
+  },
+  "batchHashes": {},
+  "urls": {
+    "tigerTractsService": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/8",
+    "tigerPlaceService": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28",
+    "acs": "https://api.census.gov/data/2024/acs/acs5",
+    "keyIncluded": false
+  }
+}

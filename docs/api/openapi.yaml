@@ -1,0 +1,582 @@
+openapi: 3.0.3
+info:
+  title: TerraScope API
+  version: 0.4.0
+  description: >
+    API del backend de TerraScope (Node + Express + MySQL). Todas las rutas, salvo /api/health,
+    /api/openapi.yaml y /api/auth/register|login, exigen `Authorization: Bearer <token>` y solo
+    devuelven datos del usuario autenticado. Los errores usan siempre la forma
+    `{ "error": { "code", "message", "details?" } }`.
+servers:
+  - url: http://localhost:3000
+    description: Desarrollo local (desde el emulador de Android usar http://10.0.2.2:3000)
+tags:
+  - { name: Sistema }
+  - { name: Auth }
+  - { name: Zonas }
+  - { name: Propiedades }
+  - { name: Watchlist }
+  - { name: Campo }
+  - { name: Puntaje e inversión }
+  - { name: Reportes }
+security:
+  - bearerAuth: []
+paths:
+  /api/health:
+    get:
+      tags: [Sistema]
+      summary: Estado del servidor y de la base de datos
+      security: []
+      responses:
+        '200':
+          description: Siempre 200 si el servidor vive; `status` es `degraded` si MySQL no responde.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Health' }
+  /api/openapi.yaml:
+    get:
+      tags: [Sistema]
+      summary: Esta especificación
+      security: []
+      responses:
+        '200': { description: Archivo YAML, content: { text/yaml: { schema: { type: string } } } }
+  /api/auth/register:
+    post:
+      tags: [Auth]
+      summary: Crear cuenta
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RegisterRequest' }
+      responses:
+        '201': { description: Cuenta creada, content: { application/json: { schema: { $ref: '#/components/schemas/AuthResponse' } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '409': { description: El correo ya existe (code `email_taken`), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /api/auth/login:
+    post:
+      tags: [Auth]
+      summary: Iniciar sesión
+      description: El error 401 es idéntico si el correo no existe o la contraseña es incorrecta.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginRequest' }
+      responses:
+        '200': { description: Sesión iniciada, content: { application/json: { schema: { $ref: '#/components/schemas/AuthResponse' } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /api/auth/me:
+    get:
+      tags: [Auth]
+      summary: Usuario de la sesión actual
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { user: { $ref: '#/components/schemas/User' } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones:
+    get:
+      tags: [Zonas]
+      summary: Lista de zonas de análisis (sin geometría)
+      description: Devuelve el listado de zonas configuradas para Somerton.
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { zones: { type: array, items: { $ref: '#/components/schemas/Zone' } } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/indicators:
+    get:
+      tags: [Zonas]
+      summary: Catálogo de indicadores disponibles
+      description: Listado de variables demográficas y territoriales soportadas.
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { indicators: { type: array, items: { $ref: '#/components/schemas/IndicatorDefinition' } } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/{id}:
+    get:
+      tags: [Zonas]
+      summary: Detalle de una zona con geometría GeoJSON e indicadores
+      description: Devuelve el polígono GeoJSON y los valores de indicadores con fuente y margen de error.
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { zone: { $ref: '#/components/schemas/ZoneDetail' } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/properties:
+    get:
+      tags: [Propiedades]
+      summary: Mis propiedades
+      parameters:
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Offset' }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { properties: { type: array, items: { $ref: '#/components/schemas/Property' } } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+    post:
+      tags: [Propiedades]
+      summary: Registrar una propiedad
+      description: La zona se asocia automáticamente si el punto cae dentro de una zona (la más específica).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PropertyInput' }
+      responses:
+        '201': { description: Creada, content: { application/json: { schema: { type: object, properties: { property: { $ref: '#/components/schemas/Property' } } } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/properties/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: integer, minimum: 1 } }
+    get:
+      tags: [Propiedades]
+      summary: Ver una propiedad propia
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { property: { $ref: '#/components/schemas/Property' } } } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    put:
+      tags: [Propiedades]
+      summary: Reemplazar una propiedad propia
+      description: Reemplazo completo (mismos campos que al crear). Recalcula la zona.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PropertyInput' }
+      responses:
+        '200': { description: Actualizada, content: { application/json: { schema: { type: object, properties: { property: { $ref: '#/components/schemas/Property' } } } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    delete:
+      tags: [Propiedades]
+      summary: Borrar una propiedad propia
+      responses:
+        '204': { description: Borrada }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/watchlist:
+    get:
+      tags: [Watchlist]
+      summary: Mis zonas guardadas
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/WatchlistResponse' } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+    post:
+      tags: [Watchlist]
+      summary: Guardar una zona (o actualizar su nota)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [zoneId]
+              properties:
+                zoneId: { type: integer, minimum: 1 }
+                note: { type: string, maxLength: 500 }
+      responses:
+        '201': { description: Zona guardada, content: { application/json: { schema: { $ref: '#/components/schemas/WatchlistResponse' } } } }
+        '200': { description: Ya estaba guardada; se actualizó la nota, content: { application/json: { schema: { $ref: '#/components/schemas/WatchlistResponse' } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { description: La zona no existe (code `zone_not_found`), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/watchlist/{zoneId}:
+    delete:
+      tags: [Watchlist]
+      summary: Quitar una zona de mi Watchlist
+      parameters:
+        - { name: zoneId, in: path, required: true, schema: { type: integer, minimum: 1 } }
+      responses:
+        '204': { description: Quitada }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/field/sync:
+    post:
+      tags: [Campo]
+      summary: Sincronizar sesiones y observaciones del reloj (por lotes, idempotente)
+      description: >
+        Los ids (UUID) los genera el cliente: reenviar el mismo lote nunca duplica registros.
+        Cada elemento recibe su propio estado (`created`, `updated`, `duplicate`, `conflict`, `invalid`);
+        un elemento inválido no bloquea a los demás. Máximo 100 elementos por arreglo.
+        Las fechas son ISO 8601 y se guardan en UTC con milisegundos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SyncRequest' }
+      responses:
+        '200': { description: Resultado por elemento, content: { application/json: { schema: { $ref: '#/components/schemas/SyncResponse' } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/field/sessions:
+    get:
+      tags: [Campo]
+      summary: Mis sesiones de exploración
+      parameters:
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Offset' }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { sessions: { type: array, items: { $ref: '#/components/schemas/FieldSession' } } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/field/observations:
+    get:
+      tags: [Campo]
+      summary: Mis observaciones de campo
+      parameters:
+        - { name: sessionId, in: query, schema: { type: string, format: uuid } }
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Offset' }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { observations: { type: array, items: { $ref: '#/components/schemas/FieldObservation' } } } } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/profiles:
+    get:
+      tags: [Puntaje e inversión]
+      summary: Perfiles de inversión disponibles
+      description: Perfiles (real_estate, restaurant, retail, services) con su descripción y los pesos de cada factor.
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { profiles: { type: array, items: { type: object } } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/profiles/match:
+    get:
+      tags: [Puntaje e inversión]
+      summary: Encuentra el perfil que corresponde a una descripción en texto libre
+      parameters:
+        - { name: q, in: query, required: true, schema: { type: string, maxLength: 200 }, description: 'Ej. "quiero abrir un restaurante"' }
+      responses:
+        '200': { description: 'match es null si no se reconoce ningún perfil', content: { application/json: { schema: { type: object, properties: { match: { type: object, nullable: true } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/ranking:
+    get:
+      tags: [Puntaje e inversión]
+      summary: Ranking de zonas censales para un perfil
+      description: Puntaje relativo 0-100 (demográfico), con confianza según el margen de error del Census.
+      parameters:
+        - { name: profile, in: query, schema: { type: string, default: retail } }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { ranking: { type: object } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/zones/{id}/score:
+    get:
+      tags: [Puntaje e inversión]
+      summary: Puntaje de una zona para un perfil
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+        - { name: profile, in: query, schema: { type: string, default: retail } }
+      responses:
+        '200': { description: 'status: ok, insufficient o not_applicable', content: { application/json: { schema: { type: object, properties: { score: { type: object } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/zones/{id}/report:
+    get:
+      tags: [Reportes]
+      summary: Reporte ejecutivo de una zona
+      description: >
+        Reporte determinista (plantilla, sin IA): resumen, puntaje con posición, indicadores con margen de error,
+        a favor, advertencias, datos faltantes, qué verificar en campo, limitaciones, fuentes y metodología.
+        Con `ai=1` añade `report.ai` ({status, text}) con un resumen redactado por IA, solo si el servidor tiene
+        clave configurada; el texto se descarta si cita cifras que no están en los datos. Con `ai=1` aplica un
+        límite por usuario (10 cada 10 minutos).
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+        - { name: profile, in: query, schema: { type: string, default: retail } }
+        - { name: ai, in: query, schema: { type: string, enum: ['1'] } }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { report: { type: object } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+  /api/field/observations/{id}:
+    put:
+      tags: [Campo]
+      summary: Editar nombre (note) y/o etiqueta (tag) de un punto propio
+      description: La ubicación no se edita.
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                note: { type: string, nullable: true, maxLength: 500 }
+                tag: { type: string, enum: [land_potential, commercial_space, construction, competitor, infrastructure, road_access, observed_risk, needs_research] }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { ok: { type: boolean } } } } } }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    delete:
+      tags: [Campo]
+      summary: Borrar un punto propio
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, format: uuid } }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { ok: { type: boolean } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/field/analysis:
+    get:
+      tags: [Reportes]
+      summary: Análisis comparativo de mis ubicaciones (puntos del reloj y propiedades)
+      description: >
+        Asocia cada ubicación a su zona censal y las ordena por el puntaje del perfil. Con `ai=1` añade
+        `analysis.ai` ({status, text}) igual que el reporte de zona (mismo límite por usuario).
+      parameters:
+        - { name: profile, in: query, schema: { type: string, default: retail } }
+        - { name: ai, in: query, schema: { type: string, enum: ['1'] } }
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { type: object, properties: { analysis: { type: object } } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '429': { $ref: '#/components/responses/RateLimited' }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+  parameters:
+    Limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 500, default: 100 } }
+    Offset: { name: offset, in: query, schema: { type: integer, minimum: 0, default: 0 } }
+  responses:
+    ValidationError: { description: Datos no válidos (code `validation_error`, con `details` por campo), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    Unauthorized: { description: Falta el token o no es válido, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    NotFound: { description: No existe o pertenece a otro usuario (no se distingue a propósito), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    RateLimited: { description: Demasiados intentos (cabecera Retry-After), content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: { type: string, example: validation_error }
+            message: { type: string }
+            details: { type: object, additionalProperties: { type: string } }
+    Health:
+      type: object
+      properties:
+        status: { type: string, enum: [ok, degraded] }
+        service: { type: string }
+        time: { type: string, format: date-time }
+        db:
+          type: object
+          properties:
+            connected: { type: boolean }
+            version: { type: string }
+            error: { type: string }
+    User:
+      type: object
+      properties:
+        id: { type: integer }
+        email: { type: string, format: email }
+        displayName: { type: string }
+        createdAt: { type: string, format: date-time }
+    RegisterRequest:
+      type: object
+      required: [email, password, displayName]
+      properties:
+        email: { type: string, format: email, maxLength: 80, description: 'Solo proveedores reconocidos (Gmail, Outlook, Hotmail, Yahoo, iCloud, etc.) o correos .edu / .edu.mx' }
+        password: { type: string, minLength: 8, maxLength: 20, description: 'Al menos una mayúscula y un número' }
+        displayName: { type: string, minLength: 1, maxLength: 80 }
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string }
+        password: { type: string }
+    AuthResponse:
+      type: object
+      properties:
+        user: { $ref: '#/components/schemas/User' }
+        token: { type: string, description: JWT HS256, caduca en 7 días }
+    Zone:
+      type: object
+      properties:
+        id: { type: integer }
+        code: { type: string, description: GEOID del Census }
+        name: { type: string }
+        level: { type: string, enum: [place, tract, block_group] }
+        friendly:
+          nullable: true
+          description: Nombre descriptivo calculado (solo en GET /zones y GET /zones/{id}); null si no hay geometría
+          type: object
+          properties:
+            title: { type: string, example: Residencial · norte }
+            kind: { type: string, nullable: true, enum: [Centro, Residencial, 'Urbana, baja densidad', Afueras y campo, Ciudad] }
+            direction: { type: string, nullable: true, description: Punto cardinal respecto al centro de Somerton }
+            distanceKm: { type: number, nullable: true }
+            insideCity: { type: boolean, nullable: true }
+            codeLabel: { type: string, description: Número del Census en texto, example: Zona censal 115.03 }
+            description: { type: string }
+            highlights:
+              type: array
+              items:
+                type: object
+                properties:
+                  code: { type: string }
+                  title: { type: string }
+                  value: { type: string }
+                  help: { type: string }
+                  comparison: { type: string, nullable: true }
+    IndicatorDefinition:
+      type: object
+      properties:
+        id: { type: integer }
+        code: { type: string }
+        name: { type: string }
+        category: { type: string }
+        unit: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+    DataSourceInfo:
+      type: object
+      properties:
+        name: { type: string }
+        organization: { type: string }
+        license: { type: string }
+        referencePeriod: { type: string }
+    ZoneIndicator:
+      type: object
+      properties:
+        code: { type: string }
+        name: { type: string }
+        category: { type: string }
+        unit: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        value: { type: number, nullable: true, description: "Valor ACS o derivado; null solo cuando el indicador no tiene dato real" }
+        marginOfError: { type: number, nullable: true }
+        referencePeriod: { type: string }
+        source: { $ref: '#/components/schemas/DataSourceInfo' }
+    ZoneDetail:
+      allOf:
+        - { $ref: '#/components/schemas/Zone' }
+        - type: object
+          properties:
+            boundary: { type: object, description: Objeto GeoJSON de geometría (Polygon o MultiPolygon) }
+            source: { $ref: '#/components/schemas/DataSourceInfo' }
+            indicators:
+              type: array
+              items: { $ref: '#/components/schemas/ZoneIndicator' }
+    PropertyInput:
+      type: object
+      required: [name, lat, lon]
+      properties:
+        name: { type: string, minLength: 1, maxLength: 120 }
+        propertyType: { type: string, enum: [land, commercial, residential, other], default: other }
+        address: { type: string, maxLength: 255 }
+        lat: { type: number, minimum: -90, maximum: 90 }
+        lon: { type: number, minimum: -180, maximum: 180 }
+        areaValue: { type: number, exclusiveMinimum: true, minimum: 0, description: Requiere areaUnit }
+        areaUnit: { type: string, enum: [sqft, acre, m2] }
+        askingPrice: { type: number, minimum: 0 }
+        rentPrice: { type: number, minimum: 0 }
+        notes: { type: string, maxLength: 5000 }
+        sourceNote: { type: string, maxLength: 255, description: Cómo se obtuvo el dato }
+        reviewStatus: { type: string, enum: [pending, verified], default: pending }
+    Property:
+      allOf:
+        - { $ref: '#/components/schemas/PropertyInput' }
+        - type: object
+          properties:
+            id: { type: integer }
+            zoneId: { type: integer, nullable: true }
+            dataType: { type: string, enum: [user], description: Siempre dato aportado por el usuario }
+            createdAt: { type: string, format: date-time }
+            updatedAt: { type: string, format: date-time }
+    WatchlistResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: integer }
+              zoneId: { type: integer }
+              note: { type: string, nullable: true }
+              createdAt: { type: string, format: date-time }
+              zone:
+                type: object
+                properties:
+                  code: { type: string }
+                  name: { type: string }
+                  level: { type: string }
+    FieldTag:
+      type: string
+      enum: [land_potential, commercial_space, construction, competitor, infrastructure, road_access, observed_risk, needs_research]
+    SyncRequest:
+      type: object
+      properties:
+        sessions:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            required: [id, startedAt]
+            properties:
+              id: { type: string, format: uuid }
+              startedAt: { type: string, format: date-time }
+              endedAt: { type: string, format: date-time }
+              device: { type: string, maxLength: 40 }
+        observations:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            required: [id, tag, lat, lon, observedAt]
+            properties:
+              id: { type: string, format: uuid }
+              sessionId: { type: string, format: uuid }
+              tag: { $ref: '#/components/schemas/FieldTag' }
+              note: { type: string, maxLength: 500 }
+              lat: { type: number }
+              lon: { type: number }
+              observedAt: { type: string, format: date-time }
+    SyncItemResult:
+      type: object
+      properties:
+        id: { type: string, nullable: true }
+        status: { type: string, enum: [created, updated, duplicate, conflict, invalid] }
+        message: { type: string }
+        details: { type: object, additionalProperties: { type: string } }
+    SyncResponse:
+      type: object
+      properties:
+        summary:
+          type: object
+          properties:
+            created: { type: integer }
+            updated: { type: integer }
+            duplicate: { type: integer }
+            conflict: { type: integer }
+            invalid: { type: integer }
+        results:
+          type: object
+          properties:
+            sessions: { type: array, items: { $ref: '#/components/schemas/SyncItemResult' } }
+            observations: { type: array, items: { $ref: '#/components/schemas/SyncItemResult' } }
+    FieldSession:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        startedAt: { type: string, format: date-time }
+        endedAt: { type: string, format: date-time, nullable: true }
+        device: { type: string, nullable: true }
+        createdAt: { type: string, format: date-time }
+    FieldObservation:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        sessionId: { type: string, format: uuid, nullable: true }
+        tag: { $ref: '#/components/schemas/FieldTag' }
+        note: { type: string, nullable: true }
+        lat: { type: number }
+        lon: { type: number }
+        observedAt: { type: string, format: date-time }
+        createdAt: { type: string, format: date-time }

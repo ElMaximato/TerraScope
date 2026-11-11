@@ -1,0 +1,18 @@
+TerraScope - Entrega: mapa profesional (Etapa 5, parte del mapa)
+Descomprime ENCIMA de la carpeta del proyecto (inversiones_somerton). Respeta las rutas.
+
+NUEVOS
+  android/app/src/main/assets/map/map.html            (mapa Leaflet con coropleta, etiquetas y selección)
+  android/app/src/main/assets/map/leaflet.js, leaflet.css, images/, LEAFLET_LICENSE.txt   (Leaflet 1.9.4, sin internet para la librería)
+  android/app/src/main/java/com/terrascope/app/ui/screen/MapData.kt
+  android/app/src/main/java/com/terrascope/app/ui/viewmodel/MapViewModel.kt
+
+MODIFICADOS
+  android/app/src/main/java/com/terrascope/app/ui/screen/MapScreen.kt        (reemplazado por completo)
+  android/app/src/main/java/com/terrascope/app/ui/viewmodel/ViewModels.kt     (se quitó el MapViewModel viejo)
+  android/app/src/main/java/com/terrascope/app/ui/navigation/MainNavigation.kt (NavHost respeta el padding del Scaffold)
+
+CÓMO PROBAR
+  1) Backend corriendo:  cd backend ; npm start
+  2) Android Studio: Sync Project y Run 'app' en el emulador (el emulador necesita internet para los mosaicos del mapa).
+  3) Pestaña Mapa: chips Población/Ingreso/Edad/Densidad, toca una zona, abre la ficha completa.

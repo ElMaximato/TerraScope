@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Secretos locales
+.env
+*.keystore
+local.properties
+
+# Android / Gradle
+.gradle/
+build/
+.idea/
+*.iml
+captures/
+.cxx/
+
+# Respaldos crudos; el manifest de importaciones oficiales sí se versiona
+backend/data/**/*.json
+!backend/data/raw/**/manifest.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Clave de CARTO (local)
+android/app/src/main/assets/map/config.js

@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>TerraScope - Mapa</title>
+<link rel="stylesheet" href="leaflet.css">
+<style>
+  html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #EEF2F0; }
+  #map { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #EEF2F0; }
+  .leaflet-container { background: #EEF2F0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+  .leaflet-interactive:focus { outline: none; }
+  .zlabelwrap { overflow: visible !important; width: 0 !important; height: 0 !important; }
+  .zlabel {
+    position: absolute; transform: translate(-50%, -50%); white-space: nowrap;
+    background: rgba(255,255,255,.95); color: #14211C; border-radius: 10px;
+    padding: 3px 8px; font: 600 10.5px/1.1 system-ui, sans-serif;
+    box-shadow: 0 1px 4px rgba(20,33,28,.18); pointer-events: none;
+  }
+  .zlabel.sel { background: #0F4D3A; color: #fff; }
+  .labels-hidden .zlabelwrap { display: none; }
+  .prop-pin { width: 20px; height: 20px; border-radius: 50% 50% 50% 0; background: #E3AE55; border: 3px solid #0F4D3A;
+              transform: rotate(-45deg); box-shadow: 0 2px 6px rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script src="config.js"></script>
+<script src="leaflet.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // Mapa base claro de CARTO (derivado de OpenStreetMap). No exige cabecera Referer, a diferencia de tile.openstreetmap.org,
+  // que bloquea las peticiones de un WebView que carga la página desde file:// (los mosaicos salen en blanco).
+  // Desde sept-2026 CARTO exige una clave gratuita (carto.com/basemaps/apikey). Pégala en config.js.
+  // La clave vive en config.js (archivo aparte que las actualizaciones no sobrescriben).
+  var CARTO_KEY = (window.TERRA_CONFIG && window.TERRA_CONFIG.cartoKey) || '';
+  var TILE_URL = 'https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png' + (CARTO_KEY ? '?key=' + CARTO_KEY : '');
+  var tileStats = { ok: 0, err: 0 };
+  var NO_DATA = '#C9D1CD';
+  var SELECT_COLOR = '#E3AE55';
+  var LABEL_MIN_ZOOM = 11.5;
+
+  var map = L.map('map', {
+    zoomControl: false,
+    attributionControl: false,   // la atribución se muestra desde la app (siempre visible)
+    minZoom: 9,
+    maxZoom: 18,
+    zoomSnap: 0.25,
+    zoomDelta: 0.5
+  });
+  map.setView([32.5975, -114.71], 12);
+
+  var baseTiles = L.tileLayer(TILE_URL, { maxZoom: 20, detectRetina: true }).addTo(map);
+  baseTiles.on('tileload', function () { tileStats.ok++; });
+  baseTiles.on('tileerror', function (e) {
+    tileStats.err++;
+    if (tileStats.err <= 3) console.log('Mosaico con error: ' + (e && e.tile ? e.tile.src : '?'));
+  });
+  map.createPane('propsPane');
+  map.getPane('propsPane').style.zIndex = 650;
+  var propsLayer = L.layerGroup().addTo(map);
+  var propIcon = L.divIcon({ className: '', html: '<div class="prop-pin"></div>', iconSize: [20, 20], iconAnchor: [10, 20] });
+  map.createPane('placePane');
+  map.getPane('placePane').style.zIndex = 450;
+  map.getPane('placePane').style.pointerEvents = 'none';
+
+  var state = {
+    indicator: 'population',
+    selectedId: null,
+    tracts: {},      // id -> { layer, feature, labelMarker, labelEl }
+    place: null,
+    insetTop: 120,
+    insetBottom: 220
+  };
+
+  function notify(id) {
+    try {
+      if (window.Android && typeof window.Android.onZoneSelected === 'function') {
+        window.Android.onZoneSelected(id);
+      }
+    } catch (e) { /* ignorar */ }
+  }
+
+  function colorFor(feature) {
+    var c = feature.properties && feature.properties.colors && feature.properties.colors[state.indicator];
+    return c || NO_DATA;
+  }
+
+  function styleFor(feature, selected) {
+    return {
+      fillColor: colorFor(feature),
+      fillOpacity: 0.6,
+      color: selected ? SELECT_COLOR : '#FFFFFF',
+      weight: selected ? 3 : 1,
+      opacity: 1,
+      lineJoin: 'round'
+    };
+  }
+
+  // ── Punto de etiqueta: centroide si cae dentro; si no, el punto interior más alejado del borde ──
+  function ringArea(ring) {
+    var a = 0;
+    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      a += (ring[j][0] * ring[i][1]) - (ring[i][0] * ring[j][1]);
+    }
+    return a / 2;
+  }
+  function ringCentroid(ring) {
+    var a = ringArea(ring), cx = 0, cy = 0;
+    if (a === 0) return ring[0];
+    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      var f = (ring[j][0] * ring[i][1]) - (ring[i][0] * ring[j][1]);
+      cx += (ring[j][0] + ring[i][0]) * f;
+      cy += (ring[j][1] + ring[i][1]) * f;
+    }
+    return [cx / (6 * a), cy / (6 * a)];
+  }
+  function inRing(pt, ring) {
+    var inside = false;
+    for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if (((yi > pt[1]) !== (yj > pt[1])) && (pt[0] < (xj - xi) * (pt[1] - yi) / (yj - yi) + xi)) inside = !inside;
+    }
+    return inside;
+  }
+  function inPolygon(pt, rings) {
+    if (!inRing(pt, rings[0])) return false;
+    for (var k = 1; k < rings.length; k++) if (inRing(pt, rings[k])) return false;
+    return true;
+  }
+  function minDistToRing(pt, ring) {
+    var best = Infinity;
+    for (var i = 0; i < ring.length; i++) {
+      var dx = ring[i][0] - pt[0], dy = ring[i][1] - pt[1];
+      var d = dx * dx + dy * dy;
+      if (d < best) best = d;
+    }
+    return best;
+  }
+  function labelPoint(geometry) {
+    var polys = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+    var main = polys[0], maxA = -1;
+    polys.forEach(function (p) {
+      var a = Math.abs(ringArea(p[0]));
+      if (a > maxA) { maxA = a; main = p; }
+    });
+    var c = ringCentroid(main[0]);
+    if (inPolygon(c, main)) return c;
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    main[0].forEach(function (p) {
+      if (p[0] < minX) minX = p[0]; if (p[0] > maxX) maxX = p[0];
+      if (p[1] < minY) minY = p[1]; if (p[1] > maxY) maxY = p[1];
+    });
+    var best = c, bestD = -1, N = 28;
+    for (var i = 1; i < N; i++) {
+      for (var j = 1; j < N; j++) {
+        var pt = [minX + (maxX - minX) * i / N, minY + (maxY - minY) * j / N];
+        if (!inPolygon(pt, main)) continue;
+        var d = minDistToRing(pt, main[0]);
+        if (d > bestD) { bestD = d; best = pt; }
+      }
+    }
+    return best;
+  }
+
+  function shortName(name) {
+    return String(name || '').replace(/^Census Tract\s+/i, '');
+  }
+
+  function clearAll() {
+    Object.keys(state.tracts).forEach(function (id) {
+      var t = state.tracts[id];
+      map.removeLayer(t.layer);
+      if (t.labelMarker) map.removeLayer(t.labelMarker);
+    });
+    state.tracts = {};
+    if (state.place) { map.removeLayer(state.place); state.place = null; }
+    state.selectedId = null;
+  }
+
+  function updateLabelsVisibility() {
+    var c = map.getContainer();
+    if (map.getZoom() < LABEL_MIN_ZOOM) c.classList.add('labels-hidden');
+    else c.classList.remove('labels-hidden');
+  }
+
+  function refreshStyles() {
+    Object.keys(state.tracts).forEach(function (id) {
+      var t = state.tracts[id];
+      var sel = String(state.selectedId) === String(id);
+      t.layer.setStyle(styleFor(t.feature, sel));
+      if (t.labelEl) t.labelEl.classList.toggle('sel', sel);
+      if (sel) t.layer.bringToFront();
+    });
+  }
+
+  function fitCity(animate) {
+    var bounds = state.place ? state.place.getBounds() : null;
+    if (!bounds) {
+      var all = Object.keys(state.tracts).map(function (id) { return state.tracts[id].layer.getBounds(); });
+      if (!all.length) return;
+      bounds = all.reduce(function (a, b) { return a.extend(b); }, L.latLngBounds(all[0].getSouthWest(), all[0].getNorthEast()));
+    }
+    map.fitBounds(bounds, {
+      paddingTopLeft: [24, state.insetTop + 12],
+      paddingBottomRight: [24, state.insetBottom + 12],
+      animate: !!animate
+    });
+  }
+
+  // Solo se explora Somerton: no se puede alejar más de ~1 nivel del encuadre de la ciudad ni arrastrar lejos de ella.
+  function lockToCity() {
+    var b = state.place ? state.place.getBounds() : null;
+    if (!b) return;
+    map.setMinZoom(Math.max(map.getZoom() - 1, 9));
+    map.setMaxBounds(b.pad(0.5));
+    map.options.maxBoundsViscosity = 0.9;
+  }
+
+  function selectFromUser(id) {
+    state.selectedId = id;
+    refreshStyles();
+    var t = state.tracts[id];
+    if (t && t.labelLatLng) {
+      map.panInside(t.labelLatLng, {
+        paddingTopLeft: [24, state.insetTop + 12],
+        paddingBottomRight: [24, state.insetBottom + 12]
+      });
+    }
+    notify(id);
+  }
+
+  var TerraMap = {
+    setData: function (fc) {
+      clearAll();
+      var features = (fc && fc.features) || [];
+      features.forEach(function (f) {
+        var p = f.properties || {};
+        if (p.level === 'place') {
+          state.place = L.geoJSON(f, {
+            pane: 'placePane',
+            interactive: false,
+            style: function () { return { fill: false, color: '#0F4D3A', weight: 1.8, opacity: 0.8, dashArray: '6 6' }; }
+          }).addTo(map);
+          return;
+        }
+        var id = p.id;
+        var layer = L.geoJSON(f, {
+          bubblingMouseEvents: false,
+          style: function (feat) { return styleFor(feat, false); }
+        }).addTo(map);
+        layer.on('click', function () { selectFromUser(id); });
+
+        var ll = labelPoint(f.geometry);
+        var latlng = L.latLng(ll[1], ll[0]);
+        var span = document.createElement('span');
+        span.className = 'zlabel';
+        span.textContent = shortName(p.name);
+        var wrap = document.createElement('div');
+        wrap.appendChild(span);
+        var marker = L.marker(latlng, {
+          interactive: false, keyboard: false,
+          icon: L.divIcon({ className: 'zlabelwrap', html: wrap.innerHTML, iconSize: [0, 0] })
+        }).addTo(map);
+        state.tracts[id] = { layer: layer, feature: f, labelMarker: marker, labelEl: null, labelLatLng: latlng };
+      });
+      // Los elementos de etiqueta existen ya en el DOM: guardar referencias.
+      Object.keys(state.tracts).forEach(function (id) {
+        var t = state.tracts[id];
+        t.labelEl = t.labelMarker.getElement() ? t.labelMarker.getElement().querySelector('.zlabel') : null;
+      });
+      console.log('setData: ' + features.length + ' zonas, mapa ' + map.getSize().x + 'x' + map.getSize().y + ' px');
+      map.invalidateSize(false);   // el WebView puede haber cambiado de tamaño tras crearse el mapa
+      updateLabelsVisibility();
+      fitCity(false);
+      lockToCity();
+      refreshStyles();
+    },
+    // Propiedades del usuario: [{id, name, lat, lon}]. Tocar un pin avisa a la app.
+    setProperties: function (list) {
+      propsLayer.clearLayers();
+      (list || []).forEach(function (p) {
+        var m = L.marker([p.lat, p.lon], { icon: propIcon, pane: 'propsPane', keyboard: false });
+        m.bindTooltip(String(p.name || 'Propiedad'), { direction: 'top', offset: [0, -18] });
+        m.on('click', function () {
+          try { if (window.Android && typeof window.Android.onPropertySelected === 'function') window.Android.onPropertySelected(p.id); } catch (e) { /* ignorar */ }
+        });
+        propsLayer.addLayer(m);
+      });
+    },
+    setIndicator: function (code) { state.indicator = code; refreshStyles(); },
+    select: function (id) {
+      state.selectedId = (id === null || id === undefined || id < 0) ? null : id;
+      refreshStyles();
+    },
+    setInsets: function (top, bottom) { state.insetTop = top || 0; state.insetBottom = bottom || 0; },
+    reset: function () { fitCity(true); },
+    resize: function () { map.invalidateSize(false); },
+    // La app indica el tamaño real del WebView en px CSS (= dp). Evita depender de height:100%, que en
+    // algunos WebView dentro de Compose resuelve a 0.
+    setSize: function (w, h) {
+      if (!w || !h) return;
+      var el = document.getElementById('map');
+      el.style.width = w + 'px';
+      el.style.height = h + 'px';
+      map.invalidateSize(false);
+    },
+    // Cadena vacía = todo bien. La app la muestra en pantalla si hay un problema.
+    problem: function () {
+      var size = map.getSize();
+      if (!size.x || !size.y) return 'El mapa tiene tamaño 0 (' + size.x + 'x' + size.y + ').';
+      if (Object.keys(state.tracts).length === 0) return 'No se dibujó ninguna zona en el mapa.';
+      if (!CARTO_KEY) return 'Falta la clave gratuita de CARTO (CARTO_KEY en map.html): el mapa base muestra "API KEY REQUIRED".';
+      if (tileStats.err > 0 && tileStats.ok === 0) return 'El mapa base no carga (' + tileStats.err + ' mosaicos con error). Revisa la conexión a Internet del teléfono.';
+      return '';
+    },
+    zoomIn: function () { map.zoomIn(); },
+    zoomOut: function () { map.zoomOut(); }
+  };
+  window.TerraMap = TerraMap;
+  // Red de seguridad: recalcular el tamaño cuando termina de cargar y poco después.
+  window.addEventListener('load', function () { map.invalidateSize(false); });
+  setTimeout(function () { map.invalidateSize(false); }, 400);
+
+  map.on('click', function () {
+    if (state.selectedId !== null) {
+      state.selectedId = null;
+      refreshStyles();
+      notify(-1);
+    }
+  });
+  map.on('zoomend', updateLabelsVisibility);
+
+  // Aviso a la app: la página ya puede recibir datos.
+  try {
+    if (window.Android && typeof window.Android.onMapReady === 'function') window.Android.onMapReady();
+  } catch (e) { /* ignorar */ }
+})();
+</script>
+</body>
+</html>

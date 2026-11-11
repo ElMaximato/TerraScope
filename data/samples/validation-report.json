@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-11-06T07:55:24.830Z",
+  "census": {
+    "acsYear": "2024",
+    "place": [
+      {
+        "name": "Somerton city, Arizona",
+        "poblacion": 14574,
+        "poblacion_moe": 19,
+        "ingreso_mediano": 74015,
+        "ingreso_moe": 11292,
+        "edad_mediana": 31.3,
+        "hogares": 4964
+      }
+    ],
+    "tractsInYumaCounty": "FALLÓ",
+    "blockGroupsInYumaCounty": 165
+  },
+  "osm": {
+    "viasPrincipales": 53,
+    "nombresVias": [
+      "East Main Street",
+      "County 16th Street",
+      "North Cesar Chavez Avenue",
+      "South Somerton Avenue",
+      "North Somerton Avenue",
+      "West Jefferson Street",
+      "South Bingham Avenue",
+      "Somerton Avenue",
+      "West Main Street",
+      "West County 14th Street",
+      "County 15th Street",
+      "South Cesar Chavez Avenue",
+      "West County 16th Street",
+      "South Avenue D",
+      "South Avenue G",
+      "West County 17th Street",
+      "North Toro Avenue"
+    ],
+    "bbox": [
+      32.57,
+      -114.75,
+      32.63,
+      -114.67
+    ],
+    "atribucion": "© OpenStreetMap contributors (ODbL 1.0)"
+  },
+  "errors": [
+    "tracts 2024: HTTP 200 (text/html) no es JSON: \"Invalid Key $(document).ready(function () { function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); return null; } // Get the referrer from the cookie document.getElementById('text-field'\" :: https://api.census.gov/data/2024/acs/acs5?get=NAME,B01003_001E,B01003_001M,B19013_001E,B19013_001M,B01002_001E,B11001_001E&for=tract:*&in=state:04+county:027&key=***",
+    "Error: https://overpass-api.de/api/interpreter -> 504",
+    "Error: https://overpass.private.coffee/api/interpreter -> 504"
+  ]
+}

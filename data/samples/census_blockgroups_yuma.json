@@ -1,0 +1,1652 @@
+[
+  {
+    "geoid": "040270001001",
+    "name": "Block Group 1; Census Tract 1; Yuma County; Arizona",
+    "poblacion": 748,
+    "poblacion_moe": 320,
+    "ingreso_mediano": 47465,
+    "ingreso_moe": 45346,
+    "edad_mediana": 28.2,
+    "hogares": 211
+  },
+  {
+    "geoid": "040270001002",
+    "name": "Block Group 2; Census Tract 1; Yuma County; Arizona",
+    "poblacion": 1115,
+    "poblacion_moe": 348,
+    "ingreso_mediano": 36107,
+    "ingreso_moe": 17113,
+    "edad_mediana": 32.8,
+    "hogares": 451
+  },
+  {
+    "geoid": "040270001003",
+    "name": "Block Group 3; Census Tract 1; Yuma County; Arizona",
+    "poblacion": 469,
+    "poblacion_moe": 71,
+    "ingreso_mediano": 21378,
+    "ingreso_moe": 1078,
+    "edad_mediana": 37.5,
+    "hogares": 73
+  },
+  {
+    "geoid": "040270002001",
+    "name": "Block Group 1; Census Tract 2; Yuma County; Arizona",
+    "poblacion": 1516,
+    "poblacion_moe": 510,
+    "ingreso_mediano": 28295,
+    "ingreso_moe": 14588,
+    "edad_mediana": 49.2,
+    "hogares": 731
+  },
+  {
+    "geoid": "040270002002",
+    "name": "Block Group 2; Census Tract 2; Yuma County; Arizona",
+    "poblacion": 1159,
+    "poblacion_moe": 407,
+    "ingreso_mediano": 82911,
+    "ingreso_moe": 75627,
+    "edad_mediana": 29.5,
+    "hogares": 333
+  },
+  {
+    "geoid": "040270002003",
+    "name": "Block Group 3; Census Tract 2; Yuma County; Arizona",
+    "poblacion": 610,
+    "poblacion_moe": 306,
+    "ingreso_mediano": 59861,
+    "ingreso_moe": 33250,
+    "edad_mediana": 50,
+    "hogares": 273
+  },
+  {
+    "geoid": "040270003011",
+    "name": "Block Group 1; Census Tract 3.01; Yuma County; Arizona",
+    "poblacion": 1957,
+    "poblacion_moe": 546,
+    "ingreso_mediano": 35391,
+    "ingreso_moe": 11963,
+    "edad_mediana": 30.5,
+    "hogares": 680
+  },
+  {
+    "geoid": "040270003012",
+    "name": "Block Group 2; Census Tract 3.01; Yuma County; Arizona",
+    "poblacion": 1313,
+    "poblacion_moe": 698,
+    "ingreso_mediano": 64875,
+    "ingreso_moe": 29843,
+    "edad_mediana": 21.8,
+    "hogares": 599
+  },
+  {
+    "geoid": "040270003021",
+    "name": "Block Group 1; Census Tract 3.02; Yuma County; Arizona",
+    "poblacion": 987,
+    "poblacion_moe": 371,
+    "ingreso_mediano": 61419,
+    "ingreso_moe": 17890,
+    "edad_mediana": 32.2,
+    "hogares": 482
+  },
+  {
+    "geoid": "040270003022",
+    "name": "Block Group 2; Census Tract 3.02; Yuma County; Arizona",
+    "poblacion": 1053,
+    "poblacion_moe": 610,
+    "ingreso_mediano": 73250,
+    "ingreso_moe": 28762,
+    "edad_mediana": 25.5,
+    "hogares": 305
+  },
+  {
+    "geoid": "040270003023",
+    "name": "Block Group 3; Census Tract 3.02; Yuma County; Arizona",
+    "poblacion": 1094,
+    "poblacion_moe": 427,
+    "ingreso_mediano": 28945,
+    "ingreso_moe": 2284,
+    "edad_mediana": 39.8,
+    "hogares": 514
+  },
+  {
+    "geoid": "040270004021",
+    "name": "Block Group 1; Census Tract 4.02; Yuma County; Arizona",
+    "poblacion": 1291,
+    "poblacion_moe": 366,
+    "ingreso_mediano": 71188,
+    "ingreso_moe": 38803,
+    "edad_mediana": 32,
+    "hogares": 390
+  },
+  {
+    "geoid": "040270004022",
+    "name": "Block Group 2; Census Tract 4.02; Yuma County; Arizona",
+    "poblacion": 929,
+    "poblacion_moe": 463,
+    "ingreso_mediano": 76351,
+    "ingreso_moe": 31832,
+    "edad_mediana": 32.6,
+    "hogares": 268
+  },
+  {
+    "geoid": "040270004023",
+    "name": "Block Group 3; Census Tract 4.02; Yuma County; Arizona",
+    "poblacion": 1458,
+    "poblacion_moe": 551,
+    "ingreso_mediano": 77105,
+    "ingreso_moe": 44966,
+    "edad_mediana": 31.4,
+    "hogares": 530
+  },
+  {
+    "geoid": "040270004031",
+    "name": "Block Group 1; Census Tract 4.03; Yuma County; Arizona",
+    "poblacion": 1256,
+    "poblacion_moe": 365,
+    "ingreso_mediano": 41118,
+    "ingreso_moe": 12126,
+    "edad_mediana": 30.1,
+    "hogares": 527
+  },
+  {
+    "geoid": "040270004041",
+    "name": "Block Group 1; Census Tract 4.04; Yuma County; Arizona",
+    "poblacion": 586,
+    "poblacion_moe": 628,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 42.3,
+    "hogares": 181
+  },
+  {
+    "geoid": "040270004042",
+    "name": "Block Group 2; Census Tract 4.04; Yuma County; Arizona",
+    "poblacion": 735,
+    "poblacion_moe": 524,
+    "ingreso_mediano": 53641,
+    "ingreso_moe": 33889,
+    "edad_mediana": 38.1,
+    "hogares": 283
+  },
+  {
+    "geoid": "040270004043",
+    "name": "Block Group 3; Census Tract 4.04; Yuma County; Arizona",
+    "poblacion": 533,
+    "poblacion_moe": 298,
+    "ingreso_mediano": 40288,
+    "ingreso_moe": 24726,
+    "edad_mediana": 69,
+    "hogares": 269
+  },
+  {
+    "geoid": "040270004044",
+    "name": "Block Group 4; Census Tract 4.04; Yuma County; Arizona",
+    "poblacion": 1539,
+    "poblacion_moe": 702,
+    "ingreso_mediano": 42651,
+    "ingreso_moe": 19288,
+    "edad_mediana": 29.2,
+    "hogares": 554
+  },
+  {
+    "geoid": "040270005011",
+    "name": "Block Group 1; Census Tract 5.01; Yuma County; Arizona",
+    "poblacion": 480,
+    "poblacion_moe": 170,
+    "ingreso_mediano": 89583,
+    "ingreso_moe": 65524,
+    "edad_mediana": 65.8,
+    "hogares": 285
+  },
+  {
+    "geoid": "040270005012",
+    "name": "Block Group 2; Census Tract 5.01; Yuma County; Arizona",
+    "poblacion": 1183,
+    "poblacion_moe": 380,
+    "ingreso_mediano": 56458,
+    "ingreso_moe": 25166,
+    "edad_mediana": 23.6,
+    "hogares": 568
+  },
+  {
+    "geoid": "040270005013",
+    "name": "Block Group 3; Census Tract 5.01; Yuma County; Arizona",
+    "poblacion": 1277,
+    "poblacion_moe": 469,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 24.7,
+    "hogares": 447
+  },
+  {
+    "geoid": "040270005021",
+    "name": "Block Group 1; Census Tract 5.02; Yuma County; Arizona",
+    "poblacion": 774,
+    "poblacion_moe": 282,
+    "ingreso_mediano": 67417,
+    "ingreso_moe": 52907,
+    "edad_mediana": 49.9,
+    "hogares": 362
+  },
+  {
+    "geoid": "040270005022",
+    "name": "Block Group 2; Census Tract 5.02; Yuma County; Arizona",
+    "poblacion": 629,
+    "poblacion_moe": 215,
+    "ingreso_mediano": 34063,
+    "ingreso_moe": 13690,
+    "edad_mediana": 59.1,
+    "hogares": 347
+  },
+  {
+    "geoid": "040270005023",
+    "name": "Block Group 3; Census Tract 5.02; Yuma County; Arizona",
+    "poblacion": 1009,
+    "poblacion_moe": 340,
+    "ingreso_mediano": 38024,
+    "ingreso_moe": 20999,
+    "edad_mediana": 59.9,
+    "hogares": 529
+  },
+  {
+    "geoid": "040270006001",
+    "name": "Block Group 1; Census Tract 6; Yuma County; Arizona",
+    "poblacion": 636,
+    "poblacion_moe": 294,
+    "ingreso_mediano": 42188,
+    "ingreso_moe": 30817,
+    "edad_mediana": 41.5,
+    "hogares": 354
+  },
+  {
+    "geoid": "040270006002",
+    "name": "Block Group 2; Census Tract 6; Yuma County; Arizona",
+    "poblacion": 669,
+    "poblacion_moe": 370,
+    "ingreso_mediano": 44100,
+    "ingreso_moe": 27467,
+    "edad_mediana": 30.6,
+    "hogares": 234
+  },
+  {
+    "geoid": "040270006003",
+    "name": "Block Group 3; Census Tract 6; Yuma County; Arizona",
+    "poblacion": 787,
+    "poblacion_moe": 401,
+    "ingreso_mediano": 46595,
+    "ingreso_moe": 33001,
+    "edad_mediana": 39.3,
+    "hogares": 273
+  },
+  {
+    "geoid": "040270006004",
+    "name": "Block Group 4; Census Tract 6; Yuma County; Arizona",
+    "poblacion": 1298,
+    "poblacion_moe": 573,
+    "ingreso_mediano": 59973,
+    "ingreso_moe": 30728,
+    "edad_mediana": 29.6,
+    "hogares": 487
+  },
+  {
+    "geoid": "040270006005",
+    "name": "Block Group 5; Census Tract 6; Yuma County; Arizona",
+    "poblacion": 1197,
+    "poblacion_moe": 372,
+    "ingreso_mediano": 53194,
+    "ingreso_moe": 19296,
+    "edad_mediana": 31.1,
+    "hogares": 555
+  },
+  {
+    "geoid": "040270007001",
+    "name": "Block Group 1; Census Tract 7; Yuma County; Arizona",
+    "poblacion": 1046,
+    "poblacion_moe": 408,
+    "ingreso_mediano": 53167,
+    "ingreso_moe": 13646,
+    "edad_mediana": 34.1,
+    "hogares": 514
+  },
+  {
+    "geoid": "040270007002",
+    "name": "Block Group 2; Census Tract 7; Yuma County; Arizona",
+    "poblacion": 1242,
+    "poblacion_moe": 497,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 26.4,
+    "hogares": 460
+  },
+  {
+    "geoid": "040270007003",
+    "name": "Block Group 3; Census Tract 7; Yuma County; Arizona",
+    "poblacion": 1435,
+    "poblacion_moe": 581,
+    "ingreso_mediano": 47708,
+    "ingreso_moe": 26769,
+    "edad_mediana": 29.8,
+    "hogares": 505
+  },
+  {
+    "geoid": "040270008001",
+    "name": "Block Group 1; Census Tract 8; Yuma County; Arizona",
+    "poblacion": 1095,
+    "poblacion_moe": 466,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 46.3,
+    "hogares": 457
+  },
+  {
+    "geoid": "040270008002",
+    "name": "Block Group 2; Census Tract 8; Yuma County; Arizona",
+    "poblacion": 1393,
+    "poblacion_moe": 608,
+    "ingreso_mediano": 37395,
+    "ingreso_moe": 24823,
+    "edad_mediana": 32.1,
+    "hogares": 449
+  },
+  {
+    "geoid": "040270008003",
+    "name": "Block Group 3; Census Tract 8; Yuma County; Arizona",
+    "poblacion": 627,
+    "poblacion_moe": 517,
+    "ingreso_mediano": 53534,
+    "ingreso_moe": 21117,
+    "edad_mediana": 22.7,
+    "hogares": 377
+  },
+  {
+    "geoid": "040270008004",
+    "name": "Block Group 4; Census Tract 8; Yuma County; Arizona",
+    "poblacion": 1720,
+    "poblacion_moe": 822,
+    "ingreso_mediano": 73007,
+    "ingreso_moe": 25922,
+    "edad_mediana": 36.4,
+    "hogares": 1028
+  },
+  {
+    "geoid": "040270008005",
+    "name": "Block Group 5; Census Tract 8; Yuma County; Arizona",
+    "poblacion": 617,
+    "poblacion_moe": 228,
+    "ingreso_mediano": 77337,
+    "ingreso_moe": 44417,
+    "edad_mediana": 61.5,
+    "hogares": 305
+  },
+  {
+    "geoid": "040270009011",
+    "name": "Block Group 1; Census Tract 9.01; Yuma County; Arizona",
+    "poblacion": 1734,
+    "poblacion_moe": 570,
+    "ingreso_mediano": 58125,
+    "ingreso_moe": 23503,
+    "edad_mediana": 38.8,
+    "hogares": 686
+  },
+  {
+    "geoid": "040270009012",
+    "name": "Block Group 2; Census Tract 9.01; Yuma County; Arizona",
+    "poblacion": 1707,
+    "poblacion_moe": 678,
+    "ingreso_mediano": 71989,
+    "ingreso_moe": 62904,
+    "edad_mediana": 44.7,
+    "hogares": 707
+  },
+  {
+    "geoid": "040270009021",
+    "name": "Block Group 1; Census Tract 9.02; Yuma County; Arizona",
+    "poblacion": 1339,
+    "poblacion_moe": 362,
+    "ingreso_mediano": 50972,
+    "ingreso_moe": 32337,
+    "edad_mediana": 30.3,
+    "hogares": 506
+  },
+  {
+    "geoid": "040270009022",
+    "name": "Block Group 2; Census Tract 9.02; Yuma County; Arizona",
+    "poblacion": 1212,
+    "poblacion_moe": 340,
+    "ingreso_mediano": 54467,
+    "ingreso_moe": 21425,
+    "edad_mediana": 25.7,
+    "hogares": 681
+  },
+  {
+    "geoid": "040270009031",
+    "name": "Block Group 1; Census Tract 9.03; Yuma County; Arizona",
+    "poblacion": 2003,
+    "poblacion_moe": 660,
+    "ingreso_mediano": 117913,
+    "ingreso_moe": 13426,
+    "edad_mediana": 33.1,
+    "hogares": 610
+  },
+  {
+    "geoid": "040270009032",
+    "name": "Block Group 2; Census Tract 9.03; Yuma County; Arizona",
+    "poblacion": 1720,
+    "poblacion_moe": 460,
+    "ingreso_mediano": 79926,
+    "ingreso_moe": 30040,
+    "edad_mediana": 40.3,
+    "hogares": 615
+  },
+  {
+    "geoid": "040270009071",
+    "name": "Block Group 1; Census Tract 9.07; Yuma County; Arizona",
+    "poblacion": 2590,
+    "poblacion_moe": 694,
+    "ingreso_mediano": 60435,
+    "ingreso_moe": 11156,
+    "edad_mediana": 26.4,
+    "hogares": 674
+  },
+  {
+    "geoid": "040270009072",
+    "name": "Block Group 2; Census Tract 9.07; Yuma County; Arizona",
+    "poblacion": 1201,
+    "poblacion_moe": 512,
+    "ingreso_mediano": 79669,
+    "ingreso_moe": 43023,
+    "edad_mediana": 29.3,
+    "hogares": 333
+  },
+  {
+    "geoid": "040270009073",
+    "name": "Block Group 3; Census Tract 9.07; Yuma County; Arizona",
+    "poblacion": 1249,
+    "poblacion_moe": 370,
+    "ingreso_mediano": 162250,
+    "ingreso_moe": 134118,
+    "edad_mediana": 26.2,
+    "hogares": 403
+  },
+  {
+    "geoid": "040270009074",
+    "name": "Block Group 4; Census Tract 9.07; Yuma County; Arizona",
+    "poblacion": 1098,
+    "poblacion_moe": 348,
+    "ingreso_mediano": 85673,
+    "ingreso_moe": 16170,
+    "edad_mediana": 33.3,
+    "hogares": 477
+  },
+  {
+    "geoid": "040270009081",
+    "name": "Block Group 1; Census Tract 9.08; Yuma County; Arizona",
+    "poblacion": 1534,
+    "poblacion_moe": 442,
+    "ingreso_mediano": 175625,
+    "ingreso_moe": 55578,
+    "edad_mediana": 32.9,
+    "hogares": 499
+  },
+  {
+    "geoid": "040270009082",
+    "name": "Block Group 2; Census Tract 9.08; Yuma County; Arizona",
+    "poblacion": 3191,
+    "poblacion_moe": 700,
+    "ingreso_mediano": 125613,
+    "ingreso_moe": 17093,
+    "edad_mediana": 32.8,
+    "hogares": 1079
+  },
+  {
+    "geoid": "040270009091",
+    "name": "Block Group 1; Census Tract 9.09; Yuma County; Arizona",
+    "poblacion": 1479,
+    "poblacion_moe": 641,
+    "ingreso_mediano": 93915,
+    "ingreso_moe": 13304,
+    "edad_mediana": 30.1,
+    "hogares": 481
+  },
+  {
+    "geoid": "040270009092",
+    "name": "Block Group 2; Census Tract 9.09; Yuma County; Arizona",
+    "poblacion": 2156,
+    "poblacion_moe": 823,
+    "ingreso_mediano": 69431,
+    "ingreso_moe": 12535,
+    "edad_mediana": 37.7,
+    "hogares": 591
+  },
+  {
+    "geoid": "040270009093",
+    "name": "Block Group 3; Census Tract 9.09; Yuma County; Arizona",
+    "poblacion": 1543,
+    "poblacion_moe": 489,
+    "ingreso_mediano": 110446,
+    "ingreso_moe": 70466,
+    "edad_mediana": 46.1,
+    "hogares": 599
+  },
+  {
+    "geoid": "040270009101",
+    "name": "Block Group 1; Census Tract 9.10; Yuma County; Arizona",
+    "poblacion": 1033,
+    "poblacion_moe": 330,
+    "ingreso_mediano": 85167,
+    "ingreso_moe": 78104,
+    "edad_mediana": 37.4,
+    "hogares": 372
+  },
+  {
+    "geoid": "040270009102",
+    "name": "Block Group 2; Census Tract 9.10; Yuma County; Arizona",
+    "poblacion": 1108,
+    "poblacion_moe": 299,
+    "ingreso_mediano": 140250,
+    "ingreso_moe": 49421,
+    "edad_mediana": 41.5,
+    "hogares": 465
+  },
+  {
+    "geoid": "040270010011",
+    "name": "Block Group 1; Census Tract 10.01; Yuma County; Arizona",
+    "poblacion": 773,
+    "poblacion_moe": 189,
+    "ingreso_mediano": 54167,
+    "ingreso_moe": 21231,
+    "edad_mediana": 68.1,
+    "hogares": 512
+  },
+  {
+    "geoid": "040270010012",
+    "name": "Block Group 2; Census Tract 10.01; Yuma County; Arizona",
+    "poblacion": 747,
+    "poblacion_moe": 317,
+    "ingreso_mediano": 41611,
+    "ingreso_moe": 16253,
+    "edad_mediana": 58.5,
+    "hogares": 333
+  },
+  {
+    "geoid": "040270010013",
+    "name": "Block Group 3; Census Tract 10.01; Yuma County; Arizona",
+    "poblacion": 967,
+    "poblacion_moe": 289,
+    "ingreso_mediano": 53534,
+    "ingreso_moe": 18818,
+    "edad_mediana": 77.7,
+    "hogares": 659
+  },
+  {
+    "geoid": "040270010031",
+    "name": "Block Group 1; Census Tract 10.03; Yuma County; Arizona",
+    "poblacion": 1171,
+    "poblacion_moe": 264,
+    "ingreso_mediano": 37336,
+    "ingreso_moe": 20965,
+    "edad_mediana": 56.7,
+    "hogares": 569
+  },
+  {
+    "geoid": "040270010041",
+    "name": "Block Group 1; Census Tract 10.04; Yuma County; Arizona",
+    "poblacion": 1215,
+    "poblacion_moe": 316,
+    "ingreso_mediano": 48631,
+    "ingreso_moe": 18545,
+    "edad_mediana": 27.7,
+    "hogares": 407
+  },
+  {
+    "geoid": "040270010042",
+    "name": "Block Group 2; Census Tract 10.04; Yuma County; Arizona",
+    "poblacion": 663,
+    "poblacion_moe": 227,
+    "ingreso_mediano": 41111,
+    "ingreso_moe": 8471,
+    "edad_mediana": 26.3,
+    "hogares": 384
+  },
+  {
+    "geoid": "040270010043",
+    "name": "Block Group 3; Census Tract 10.04; Yuma County; Arizona",
+    "poblacion": 846,
+    "poblacion_moe": 566,
+    "ingreso_mediano": 44159,
+    "ingreso_moe": 14029,
+    "edad_mediana": 33.9,
+    "hogares": 281
+  },
+  {
+    "geoid": "040270011001",
+    "name": "Block Group 1; Census Tract 11; Yuma County; Arizona",
+    "poblacion": 1027,
+    "poblacion_moe": 409,
+    "ingreso_mediano": 54597,
+    "ingreso_moe": 18164,
+    "edad_mediana": 32.7,
+    "hogares": 430
+  },
+  {
+    "geoid": "040270011002",
+    "name": "Block Group 2; Census Tract 11; Yuma County; Arizona",
+    "poblacion": 1773,
+    "poblacion_moe": 747,
+    "ingreso_mediano": 38957,
+    "ingreso_moe": 4821,
+    "edad_mediana": 34.9,
+    "hogares": 757
+  },
+  {
+    "geoid": "040270011003",
+    "name": "Block Group 3; Census Tract 11; Yuma County; Arizona",
+    "poblacion": 1424,
+    "poblacion_moe": 788,
+    "ingreso_mediano": 54219,
+    "ingreso_moe": 36878,
+    "edad_mediana": 21.7,
+    "hogares": 537
+  },
+  {
+    "geoid": "040270011004",
+    "name": "Block Group 4; Census Tract 11; Yuma County; Arizona",
+    "poblacion": 1574,
+    "poblacion_moe": 384,
+    "ingreso_mediano": 79489,
+    "ingreso_moe": 27148,
+    "edad_mediana": 43.6,
+    "hogares": 746
+  },
+  {
+    "geoid": "040270012001",
+    "name": "Block Group 1; Census Tract 12; Yuma County; Arizona",
+    "poblacion": 878,
+    "poblacion_moe": 501,
+    "ingreso_mediano": 85347,
+    "ingreso_moe": 54449,
+    "edad_mediana": 28.8,
+    "hogares": 379
+  },
+  {
+    "geoid": "040270012002",
+    "name": "Block Group 2; Census Tract 12; Yuma County; Arizona",
+    "poblacion": 757,
+    "poblacion_moe": 270,
+    "ingreso_mediano": 50192,
+    "ingreso_moe": 27550,
+    "edad_mediana": 52.5,
+    "hogares": 390
+  },
+  {
+    "geoid": "040270012003",
+    "name": "Block Group 3; Census Tract 12; Yuma County; Arizona",
+    "poblacion": 817,
+    "poblacion_moe": 392,
+    "ingreso_mediano": 81793,
+    "ingreso_moe": 34332,
+    "edad_mediana": 41,
+    "hogares": 289
+  },
+  {
+    "geoid": "040270012004",
+    "name": "Block Group 4; Census Tract 12; Yuma County; Arizona",
+    "poblacion": 1277,
+    "poblacion_moe": 440,
+    "ingreso_mediano": 72365,
+    "ingreso_moe": 33113,
+    "edad_mediana": 40.5,
+    "hogares": 493
+  },
+  {
+    "geoid": "040270109071",
+    "name": "Block Group 1; Census Tract 109.07; Yuma County; Arizona",
+    "poblacion": 966,
+    "poblacion_moe": 260,
+    "ingreso_mediano": 48140,
+    "ingreso_moe": 32718,
+    "edad_mediana": 65.1,
+    "hogares": 591
+  },
+  {
+    "geoid": "040270109072",
+    "name": "Block Group 2; Census Tract 109.07; Yuma County; Arizona",
+    "poblacion": 2631,
+    "poblacion_moe": 733,
+    "ingreso_mediano": 78264,
+    "ingreso_moe": 40606,
+    "edad_mediana": 35.3,
+    "hogares": 817
+  },
+  {
+    "geoid": "040270109073",
+    "name": "Block Group 3; Census Tract 109.07; Yuma County; Arizona",
+    "poblacion": 1137,
+    "poblacion_moe": 597,
+    "ingreso_mediano": 108108,
+    "ingreso_moe": 30330,
+    "edad_mediana": 43,
+    "hogares": 496
+  },
+  {
+    "geoid": "040270109101",
+    "name": "Block Group 1; Census Tract 109.10; Yuma County; Arizona",
+    "poblacion": 532,
+    "poblacion_moe": 141,
+    "ingreso_mediano": 42417,
+    "ingreso_moe": 38735,
+    "edad_mediana": 73.5,
+    "hogares": 333
+  },
+  {
+    "geoid": "040270109102",
+    "name": "Block Group 2; Census Tract 109.10; Yuma County; Arizona",
+    "poblacion": 1186,
+    "poblacion_moe": 223,
+    "ingreso_mediano": 67527,
+    "ingreso_moe": 11227,
+    "edad_mediana": 65.8,
+    "hogares": 611
+  },
+  {
+    "geoid": "040270109111",
+    "name": "Block Group 1; Census Tract 109.11; Yuma County; Arizona",
+    "poblacion": 2237,
+    "poblacion_moe": 543,
+    "ingreso_mediano": 114318,
+    "ingreso_moe": 31569,
+    "edad_mediana": 30,
+    "hogares": 744
+  },
+  {
+    "geoid": "040270109112",
+    "name": "Block Group 2; Census Tract 109.11; Yuma County; Arizona",
+    "poblacion": 844,
+    "poblacion_moe": 371,
+    "ingreso_mediano": 65708,
+    "ingreso_moe": 25847,
+    "edad_mediana": 26.5,
+    "hogares": 215
+  },
+  {
+    "geoid": "040270109113",
+    "name": "Block Group 3; Census Tract 109.11; Yuma County; Arizona",
+    "poblacion": 1944,
+    "poblacion_moe": 594,
+    "ingreso_mediano": 94432,
+    "ingreso_moe": 11606,
+    "edad_mediana": 30.6,
+    "hogares": 669
+  },
+  {
+    "geoid": "040270109114",
+    "name": "Block Group 4; Census Tract 109.11; Yuma County; Arizona",
+    "poblacion": 1283,
+    "poblacion_moe": 286,
+    "ingreso_mediano": 93676,
+    "ingreso_moe": 36743,
+    "edad_mediana": 25.2,
+    "hogares": 366
+  },
+  {
+    "geoid": "040270109131",
+    "name": "Block Group 1; Census Tract 109.13; Yuma County; Arizona",
+    "poblacion": 1064,
+    "poblacion_moe": 197,
+    "ingreso_mediano": 52337,
+    "ingreso_moe": 25274,
+    "edad_mediana": 33.4,
+    "hogares": 451
+  },
+  {
+    "geoid": "040270109141",
+    "name": "Block Group 1; Census Tract 109.14; Yuma County; Arizona",
+    "poblacion": 146,
+    "poblacion_moe": 91,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 60.8,
+    "hogares": 85
+  },
+  {
+    "geoid": "040270109142",
+    "name": "Block Group 2; Census Tract 109.14; Yuma County; Arizona",
+    "poblacion": 625,
+    "poblacion_moe": 312,
+    "ingreso_mediano": 36845,
+    "ingreso_moe": 24374,
+    "edad_mediana": 30.7,
+    "hogares": 276
+  },
+  {
+    "geoid": "040270109151",
+    "name": "Block Group 1; Census Tract 109.15; Yuma County; Arizona",
+    "poblacion": 1378,
+    "poblacion_moe": 620,
+    "ingreso_mediano": 68545,
+    "ingreso_moe": 13351,
+    "edad_mediana": 36.2,
+    "hogares": 590
+  },
+  {
+    "geoid": "040270109152",
+    "name": "Block Group 2; Census Tract 109.15; Yuma County; Arizona",
+    "poblacion": 1188,
+    "poblacion_moe": 245,
+    "ingreso_mediano": 58065,
+    "ingreso_moe": 8105,
+    "edad_mediana": 63.4,
+    "hogares": 542
+  },
+  {
+    "geoid": "040270109161",
+    "name": "Block Group 1; Census Tract 109.16; Yuma County; Arizona",
+    "poblacion": 671,
+    "poblacion_moe": 140,
+    "ingreso_mediano": 43214,
+    "ingreso_moe": 17557,
+    "edad_mediana": 49.7,
+    "hogares": 348
+  },
+  {
+    "geoid": "040270110001",
+    "name": "Block Group 1; Census Tract 110; Yuma County; Arizona",
+    "poblacion": 617,
+    "poblacion_moe": 242,
+    "ingreso_mediano": 78750,
+    "ingreso_moe": 74417,
+    "edad_mediana": 28.7,
+    "hogares": 190
+  },
+  {
+    "geoid": "040270110002",
+    "name": "Block Group 2; Census Tract 110; Yuma County; Arizona",
+    "poblacion": 903,
+    "poblacion_moe": 223,
+    "ingreso_mediano": 53000,
+    "ingreso_moe": 10186,
+    "edad_mediana": 56.8,
+    "hogares": 426
+  },
+  {
+    "geoid": "040270111071",
+    "name": "Block Group 1; Census Tract 111.07; Yuma County; Arizona",
+    "poblacion": 370,
+    "poblacion_moe": 326,
+    "ingreso_mediano": 113106,
+    "ingreso_moe": 58513,
+    "edad_mediana": 43.5,
+    "hogares": 84
+  },
+  {
+    "geoid": "040270111072",
+    "name": "Block Group 2; Census Tract 111.07; Yuma County; Arizona",
+    "poblacion": 1545,
+    "poblacion_moe": 335,
+    "ingreso_mediano": 120417,
+    "ingreso_moe": 16825,
+    "edad_mediana": 33,
+    "hogares": 470
+  },
+  {
+    "geoid": "040270111073",
+    "name": "Block Group 3; Census Tract 111.07; Yuma County; Arizona",
+    "poblacion": 1342,
+    "poblacion_moe": 367,
+    "ingreso_mediano": 131429,
+    "ingreso_moe": 48812,
+    "edad_mediana": 29.8,
+    "hogares": 390
+  },
+  {
+    "geoid": "040270111081",
+    "name": "Block Group 1; Census Tract 111.08; Yuma County; Arizona",
+    "poblacion": 2545,
+    "poblacion_moe": 394,
+    "ingreso_mediano": 114861,
+    "ingreso_moe": 22141,
+    "edad_mediana": 32,
+    "hogares": 827
+  },
+  {
+    "geoid": "040270111082",
+    "name": "Block Group 2; Census Tract 111.08; Yuma County; Arizona",
+    "poblacion": 494,
+    "poblacion_moe": 258,
+    "ingreso_mediano": 85307,
+    "ingreso_moe": 31604,
+    "edad_mediana": 28.2,
+    "hogares": 241
+  },
+  {
+    "geoid": "040270111083",
+    "name": "Block Group 3; Census Tract 111.08; Yuma County; Arizona",
+    "poblacion": 757,
+    "poblacion_moe": 269,
+    "ingreso_mediano": 49712,
+    "ingreso_moe": 18980,
+    "edad_mediana": 66.9,
+    "hogares": 380
+  },
+  {
+    "geoid": "040270111121",
+    "name": "Block Group 1; Census Tract 111.12; Yuma County; Arizona",
+    "poblacion": 1439,
+    "poblacion_moe": 384,
+    "ingreso_mediano": 58686,
+    "ingreso_moe": 10471,
+    "edad_mediana": 70.7,
+    "hogares": 669
+  },
+  {
+    "geoid": "040270111122",
+    "name": "Block Group 2; Census Tract 111.12; Yuma County; Arizona",
+    "poblacion": 698,
+    "poblacion_moe": 241,
+    "ingreso_mediano": 64191,
+    "ingreso_moe": 42584,
+    "edad_mediana": 67.7,
+    "hogares": 403
+  },
+  {
+    "geoid": "040270111123",
+    "name": "Block Group 3; Census Tract 111.12; Yuma County; Arizona",
+    "poblacion": 1022,
+    "poblacion_moe": 288,
+    "ingreso_mediano": 55117,
+    "ingreso_moe": 28707,
+    "edad_mediana": 53.8,
+    "hogares": 531
+  },
+  {
+    "geoid": "040270111141",
+    "name": "Block Group 1; Census Tract 111.14; Yuma County; Arizona",
+    "poblacion": 1560,
+    "poblacion_moe": 440,
+    "ingreso_mediano": 68438,
+    "ingreso_moe": 13204,
+    "edad_mediana": 49.4,
+    "hogares": 627
+  },
+  {
+    "geoid": "040270111142",
+    "name": "Block Group 2; Census Tract 111.14; Yuma County; Arizona",
+    "poblacion": 341,
+    "poblacion_moe": 137,
+    "ingreso_mediano": 58500,
+    "ingreso_moe": 12388,
+    "edad_mediana": 73.8,
+    "hogares": 206
+  },
+  {
+    "geoid": "040270111143",
+    "name": "Block Group 3; Census Tract 111.14; Yuma County; Arizona",
+    "poblacion": 499,
+    "poblacion_moe": 215,
+    "ingreso_mediano": 77551,
+    "ingreso_moe": 8888,
+    "edad_mediana": 76.6,
+    "hogares": 262
+  },
+  {
+    "geoid": "040270111161",
+    "name": "Block Group 1; Census Tract 111.16; Yuma County; Arizona",
+    "poblacion": 792,
+    "poblacion_moe": 229,
+    "ingreso_mediano": 63906,
+    "ingreso_moe": 21232,
+    "edad_mediana": 47.4,
+    "hogares": 381
+  },
+  {
+    "geoid": "040270111162",
+    "name": "Block Group 2; Census Tract 111.16; Yuma County; Arizona",
+    "poblacion": 1241,
+    "poblacion_moe": 307,
+    "ingreso_mediano": 67639,
+    "ingreso_moe": 30464,
+    "edad_mediana": 69.6,
+    "hogares": 617
+  },
+  {
+    "geoid": "040270111171",
+    "name": "Block Group 1; Census Tract 111.17; Yuma County; Arizona",
+    "poblacion": 4369,
+    "poblacion_moe": 665,
+    "ingreso_mediano": 58529,
+    "ingreso_moe": 13308,
+    "edad_mediana": 32.9,
+    "hogares": 1836
+  },
+  {
+    "geoid": "040270111181",
+    "name": "Block Group 1; Census Tract 111.18; Yuma County; Arizona",
+    "poblacion": 933,
+    "poblacion_moe": 225,
+    "ingreso_mediano": 42083,
+    "ingreso_moe": 13410,
+    "edad_mediana": 72.9,
+    "hogares": 560
+  },
+  {
+    "geoid": "040270111191",
+    "name": "Block Group 1; Census Tract 111.19; Yuma County; Arizona",
+    "poblacion": 431,
+    "poblacion_moe": 205,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 63.3,
+    "hogares": 250
+  },
+  {
+    "geoid": "040270111192",
+    "name": "Block Group 2; Census Tract 111.19; Yuma County; Arizona",
+    "poblacion": 998,
+    "poblacion_moe": 239,
+    "ingreso_mediano": 57065,
+    "ingreso_moe": 12843,
+    "edad_mediana": 65.8,
+    "hogares": 436
+  },
+  {
+    "geoid": "040270111193",
+    "name": "Block Group 3; Census Tract 111.19; Yuma County; Arizona",
+    "poblacion": 435,
+    "poblacion_moe": 216,
+    "ingreso_mediano": 43787,
+    "ingreso_moe": 5811,
+    "edad_mediana": 67.4,
+    "hogares": 223
+  },
+  {
+    "geoid": "040270111201",
+    "name": "Block Group 1; Census Tract 111.20; Yuma County; Arizona",
+    "poblacion": 1224,
+    "poblacion_moe": 472,
+    "ingreso_mediano": 60929,
+    "ingreso_moe": 14569,
+    "edad_mediana": 74.4,
+    "hogares": 780
+  },
+  {
+    "geoid": "040270111202",
+    "name": "Block Group 2; Census Tract 111.20; Yuma County; Arizona",
+    "poblacion": 646,
+    "poblacion_moe": 144,
+    "ingreso_mediano": 62688,
+    "ingreso_moe": 10263,
+    "edad_mediana": 65.5,
+    "hogares": 313
+  },
+  {
+    "geoid": "040270111211",
+    "name": "Block Group 1; Census Tract 111.21; Yuma County; Arizona",
+    "poblacion": 2248,
+    "poblacion_moe": 905,
+    "ingreso_mediano": 79512,
+    "ingreso_moe": 10739,
+    "edad_mediana": 29.4,
+    "hogares": 710
+  },
+  {
+    "geoid": "040270111212",
+    "name": "Block Group 2; Census Tract 111.21; Yuma County; Arizona",
+    "poblacion": 4996,
+    "poblacion_moe": 684,
+    "ingreso_mediano": 89132,
+    "ingreso_moe": 20186,
+    "edad_mediana": 32.7,
+    "hogares": 1897
+  },
+  {
+    "geoid": "040270111221",
+    "name": "Block Group 1; Census Tract 111.22; Yuma County; Arizona",
+    "poblacion": 802,
+    "poblacion_moe": 384,
+    "ingreso_mediano": 47975,
+    "ingreso_moe": 26141,
+    "edad_mediana": 50.2,
+    "hogares": 420
+  },
+  {
+    "geoid": "040270111222",
+    "name": "Block Group 2; Census Tract 111.22; Yuma County; Arizona",
+    "poblacion": 335,
+    "poblacion_moe": 153,
+    "ingreso_mediano": 36250,
+    "ingreso_moe": 13851,
+    "edad_mediana": 68.1,
+    "hogares": 232
+  },
+  {
+    "geoid": "040270111223",
+    "name": "Block Group 3; Census Tract 111.22; Yuma County; Arizona",
+    "poblacion": 720,
+    "poblacion_moe": 532,
+    "ingreso_mediano": 46074,
+    "ingreso_moe": 9169,
+    "edad_mediana": 28.9,
+    "hogares": 303
+  },
+  {
+    "geoid": "040270111231",
+    "name": "Block Group 1; Census Tract 111.23; Yuma County; Arizona",
+    "poblacion": 925,
+    "poblacion_moe": 227,
+    "ingreso_mediano": 68409,
+    "ingreso_moe": 27710,
+    "edad_mediana": 62.5,
+    "hogares": 428
+  },
+  {
+    "geoid": "040270111232",
+    "name": "Block Group 2; Census Tract 111.23; Yuma County; Arizona",
+    "poblacion": 655,
+    "poblacion_moe": 158,
+    "ingreso_mediano": 63068,
+    "ingreso_moe": 35726,
+    "edad_mediana": 58.6,
+    "hogares": 271
+  },
+  {
+    "geoid": "040270111241",
+    "name": "Block Group 1; Census Tract 111.24; Yuma County; Arizona",
+    "poblacion": 987,
+    "poblacion_moe": 202,
+    "ingreso_mediano": 50417,
+    "ingreso_moe": 24709,
+    "edad_mediana": 74,
+    "hogares": 579
+  },
+  {
+    "geoid": "040270111242",
+    "name": "Block Group 2; Census Tract 111.24; Yuma County; Arizona",
+    "poblacion": 754,
+    "poblacion_moe": 165,
+    "ingreso_mediano": 50714,
+    "ingreso_moe": 27024,
+    "edad_mediana": 76.1,
+    "hogares": 422
+  },
+  {
+    "geoid": "040270111251",
+    "name": "Block Group 1; Census Tract 111.25; Yuma County; Arizona",
+    "poblacion": 646,
+    "poblacion_moe": 250,
+    "ingreso_mediano": 61118,
+    "ingreso_moe": 41384,
+    "edad_mediana": 78.6,
+    "hogares": 393
+  },
+  {
+    "geoid": "040270111252",
+    "name": "Block Group 2; Census Tract 111.25; Yuma County; Arizona",
+    "poblacion": 1248,
+    "poblacion_moe": 355,
+    "ingreso_mediano": 65366,
+    "ingreso_moe": 17558,
+    "edad_mediana": 70.6,
+    "hogares": 632
+  },
+  {
+    "geoid": "040270112021",
+    "name": "Block Group 1; Census Tract 112.02; Yuma County; Arizona",
+    "poblacion": 1347,
+    "poblacion_moe": 337,
+    "ingreso_mediano": 74000,
+    "ingreso_moe": 32599,
+    "edad_mediana": 34.2,
+    "hogares": 568
+  },
+  {
+    "geoid": "040270112031",
+    "name": "Block Group 1; Census Tract 112.03; Yuma County; Arizona",
+    "poblacion": 301,
+    "poblacion_moe": 126,
+    "ingreso_mediano": 38056,
+    "ingreso_moe": 32720,
+    "edad_mediana": 65.6,
+    "hogares": 190
+  },
+  {
+    "geoid": "040270112032",
+    "name": "Block Group 2; Census Tract 112.03; Yuma County; Arizona",
+    "poblacion": 643,
+    "poblacion_moe": 184,
+    "ingreso_mediano": 57981,
+    "ingreso_moe": 23986,
+    "edad_mediana": 69.2,
+    "hogares": 335
+  },
+  {
+    "geoid": "040270112033",
+    "name": "Block Group 3; Census Tract 112.03; Yuma County; Arizona",
+    "poblacion": 341,
+    "poblacion_moe": 266,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 30.8,
+    "hogares": 161
+  },
+  {
+    "geoid": "040270112041",
+    "name": "Block Group 1; Census Tract 112.04; Yuma County; Arizona",
+    "poblacion": 1056,
+    "poblacion_moe": 348,
+    "ingreso_mediano": 91175,
+    "ingreso_moe": 6498,
+    "edad_mediana": 56.4,
+    "hogares": 481
+  },
+  {
+    "geoid": "040270112042",
+    "name": "Block Group 2; Census Tract 112.04; Yuma County; Arizona",
+    "poblacion": 962,
+    "poblacion_moe": 408,
+    "ingreso_mediano": 60500,
+    "ingreso_moe": 26060,
+    "edad_mediana": 64.5,
+    "hogares": 436
+  },
+  {
+    "geoid": "040270114031",
+    "name": "Block Group 1; Census Tract 114.03; Yuma County; Arizona",
+    "poblacion": 2040,
+    "poblacion_moe": 695,
+    "ingreso_mediano": 51523,
+    "ingreso_moe": 11034,
+    "edad_mediana": 37.2,
+    "hogares": 835
+  },
+  {
+    "geoid": "040270114032",
+    "name": "Block Group 2; Census Tract 114.03; Yuma County; Arizona",
+    "poblacion": 1149,
+    "poblacion_moe": 507,
+    "ingreso_mediano": 34736,
+    "ingreso_moe": 28211,
+    "edad_mediana": 47,
+    "hogares": 367
+  },
+  {
+    "geoid": "040270114033",
+    "name": "Block Group 3; Census Tract 114.03; Yuma County; Arizona",
+    "poblacion": 1411,
+    "poblacion_moe": 663,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 39.6,
+    "hogares": 461
+  },
+  {
+    "geoid": "040270114051",
+    "name": "Block Group 1; Census Tract 114.05; Yuma County; Arizona",
+    "poblacion": 2357,
+    "poblacion_moe": 835,
+    "ingreso_mediano": 75110,
+    "ingreso_moe": 41133,
+    "edad_mediana": 36.3,
+    "hogares": 687
+  },
+  {
+    "geoid": "040270114052",
+    "name": "Block Group 2; Census Tract 114.05; Yuma County; Arizona",
+    "poblacion": 2413,
+    "poblacion_moe": 521,
+    "ingreso_mediano": 197894,
+    "ingreso_moe": 114518,
+    "edad_mediana": 30.1,
+    "hogares": 463
+  },
+  {
+    "geoid": "040270114053",
+    "name": "Block Group 3; Census Tract 114.05; Yuma County; Arizona",
+    "poblacion": 536,
+    "poblacion_moe": 457,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 55.2,
+    "hogares": 129
+  },
+  {
+    "geoid": "040270114071",
+    "name": "Block Group 1; Census Tract 114.07; Yuma County; Arizona",
+    "poblacion": 2119,
+    "poblacion_moe": 847,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 22.7,
+    "hogares": 602
+  },
+  {
+    "geoid": "040270114072",
+    "name": "Block Group 2; Census Tract 114.07; Yuma County; Arizona",
+    "poblacion": 1794,
+    "poblacion_moe": 730,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 42.1,
+    "hogares": 669
+  },
+  {
+    "geoid": "040270114073",
+    "name": "Block Group 3; Census Tract 114.07; Yuma County; Arizona",
+    "poblacion": 2486,
+    "poblacion_moe": 951,
+    "ingreso_mediano": 82034,
+    "ingreso_moe": 26544,
+    "edad_mediana": 31.9,
+    "hogares": 805
+  },
+  {
+    "geoid": "040270114081",
+    "name": "Block Group 1; Census Tract 114.08; Yuma County; Arizona",
+    "poblacion": 2826,
+    "poblacion_moe": 826,
+    "ingreso_mediano": 74583,
+    "ingreso_moe": 23473,
+    "edad_mediana": 21.1,
+    "hogares": 656
+  },
+  {
+    "geoid": "040270114082",
+    "name": "Block Group 2; Census Tract 114.08; Yuma County; Arizona",
+    "poblacion": 1551,
+    "poblacion_moe": 635,
+    "ingreso_mediano": 74866,
+    "ingreso_moe": 30378,
+    "edad_mediana": 32.9,
+    "hogares": 473
+  },
+  {
+    "geoid": "040270115011",
+    "name": "Block Group 1; Census Tract 115.01; Yuma County; Arizona",
+    "poblacion": 850,
+    "poblacion_moe": 394,
+    "ingreso_mediano": 42930,
+    "ingreso_moe": 37187,
+    "edad_mediana": 22.5,
+    "hogares": 330
+  },
+  {
+    "geoid": "040270115012",
+    "name": "Block Group 2; Census Tract 115.01; Yuma County; Arizona",
+    "poblacion": 713,
+    "poblacion_moe": 251,
+    "ingreso_mediano": 86442,
+    "ingreso_moe": 22008,
+    "edad_mediana": 40.4,
+    "hogares": 204
+  },
+  {
+    "geoid": "040270115013",
+    "name": "Block Group 3; Census Tract 115.01; Yuma County; Arizona",
+    "poblacion": 217,
+    "poblacion_moe": 97,
+    "ingreso_mediano": 25250,
+    "ingreso_moe": 16749,
+    "edad_mediana": 28.6,
+    "hogares": 75
+  },
+  {
+    "geoid": "040270115014",
+    "name": "Block Group 4; Census Tract 115.01; Yuma County; Arizona",
+    "poblacion": 383,
+    "poblacion_moe": 135,
+    "ingreso_mediano": 45000,
+    "ingreso_moe": 27409,
+    "edad_mediana": 22.7,
+    "hogares": 150
+  },
+  {
+    "geoid": "040270115031",
+    "name": "Block Group 1; Census Tract 115.03; Yuma County; Arizona",
+    "poblacion": 1499,
+    "poblacion_moe": 601,
+    "ingreso_mediano": 75066,
+    "ingreso_moe": 31495,
+    "edad_mediana": 43.2,
+    "hogares": 568
+  },
+  {
+    "geoid": "040270115032",
+    "name": "Block Group 2; Census Tract 115.03; Yuma County; Arizona",
+    "poblacion": 1597,
+    "poblacion_moe": 612,
+    "ingreso_mediano": 56164,
+    "ingreso_moe": 16537,
+    "edad_mediana": 44.4,
+    "hogares": 651
+  },
+  {
+    "geoid": "040270115033",
+    "name": "Block Group 3; Census Tract 115.03; Yuma County; Arizona",
+    "poblacion": 1600,
+    "poblacion_moe": 687,
+    "ingreso_mediano": 56369,
+    "ingreso_moe": 20762,
+    "edad_mediana": 23.9,
+    "hogares": 442
+  },
+  {
+    "geoid": "040270115051",
+    "name": "Block Group 1; Census Tract 115.05; Yuma County; Arizona",
+    "poblacion": 2292,
+    "poblacion_moe": 866,
+    "ingreso_mediano": 81112,
+    "ingreso_moe": 12490,
+    "edad_mediana": 28.5,
+    "hogares": 607
+  },
+  {
+    "geoid": "040270115052",
+    "name": "Block Group 2; Census Tract 115.05; Yuma County; Arizona",
+    "poblacion": 1343,
+    "poblacion_moe": 556,
+    "ingreso_mediano": 54587,
+    "ingreso_moe": 44978,
+    "edad_mediana": 36.7,
+    "hogares": 685
+  },
+  {
+    "geoid": "040270115053",
+    "name": "Block Group 3; Census Tract 115.05; Yuma County; Arizona",
+    "poblacion": 1569,
+    "poblacion_moe": 849,
+    "ingreso_mediano": 82698,
+    "ingreso_moe": 11009,
+    "edad_mediana": 33.6,
+    "hogares": 428
+  },
+  {
+    "geoid": "040270115061",
+    "name": "Block Group 1; Census Tract 115.06; Yuma County; Arizona",
+    "poblacion": 1988,
+    "poblacion_moe": 694,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 28.8,
+    "hogares": 733
+  },
+  {
+    "geoid": "040270115062",
+    "name": "Block Group 2; Census Tract 115.06; Yuma County; Arizona",
+    "poblacion": 2036,
+    "poblacion_moe": 963,
+    "ingreso_mediano": 103374,
+    "ingreso_moe": 25676,
+    "edad_mediana": 26.6,
+    "hogares": 603
+  },
+  {
+    "geoid": "040270116011",
+    "name": "Block Group 1; Census Tract 116.01; Yuma County; Arizona",
+    "poblacion": 682,
+    "poblacion_moe": 576,
+    "ingreso_mediano": 14968,
+    "ingreso_moe": 11441,
+    "edad_mediana": 10.7,
+    "hogares": 229
+  },
+  {
+    "geoid": "040270116012",
+    "name": "Block Group 2; Census Tract 116.01; Yuma County; Arizona",
+    "poblacion": 1604,
+    "poblacion_moe": 895,
+    "ingreso_mediano": 73145,
+    "ingreso_moe": 31729,
+    "edad_mediana": 35.5,
+    "hogares": 523
+  },
+  {
+    "geoid": "040270116013",
+    "name": "Block Group 3; Census Tract 116.01; Yuma County; Arizona",
+    "poblacion": 3913,
+    "poblacion_moe": 1728,
+    "ingreso_mediano": 63090,
+    "ingreso_moe": 36597,
+    "edad_mediana": 31.5,
+    "hogares": 1128
+  },
+  {
+    "geoid": "040270116021",
+    "name": "Block Group 1; Census Tract 116.02; Yuma County; Arizona",
+    "poblacion": 1602,
+    "poblacion_moe": 706,
+    "ingreso_mediano": 52159,
+    "ingreso_moe": 36568,
+    "edad_mediana": 25.6,
+    "hogares": 532
+  },
+  {
+    "geoid": "040270116022",
+    "name": "Block Group 2; Census Tract 116.02; Yuma County; Arizona",
+    "poblacion": 2104,
+    "poblacion_moe": 926,
+    "ingreso_mediano": 39052,
+    "ingreso_moe": 16068,
+    "edad_mediana": 23,
+    "hogares": 610
+  },
+  {
+    "geoid": "040270117001",
+    "name": "Block Group 1; Census Tract 117; Yuma County; Arizona",
+    "poblacion": 1110,
+    "poblacion_moe": 232,
+    "ingreso_mediano": 87391,
+    "ingreso_moe": 17705,
+    "edad_mediana": 46.2,
+    "hogares": 482
+  },
+  {
+    "geoid": "040270117002",
+    "name": "Block Group 2; Census Tract 117; Yuma County; Arizona",
+    "poblacion": 503,
+    "poblacion_moe": 156,
+    "ingreso_mediano": 43929,
+    "ingreso_moe": 23826,
+    "edad_mediana": 71.3,
+    "hogares": 298
+  },
+  {
+    "geoid": "040270118011",
+    "name": "Block Group 1; Census Tract 118.01; Yuma County; Arizona",
+    "poblacion": 8035,
+    "poblacion_moe": 1127,
+    "ingreso_mediano": 84762,
+    "ingreso_moe": 7208,
+    "edad_mediana": 38,
+    "hogares": 922
+  },
+  {
+    "geoid": "040270118012",
+    "name": "Block Group 2; Census Tract 118.01; Yuma County; Arizona",
+    "poblacion": 1736,
+    "poblacion_moe": 491,
+    "ingreso_mediano": 32241,
+    "ingreso_moe": 16630,
+    "edad_mediana": 55.5,
+    "hogares": 807
+  },
+  {
+    "geoid": "040270118021",
+    "name": "Block Group 1; Census Tract 118.02; Yuma County; Arizona",
+    "poblacion": 1547,
+    "poblacion_moe": 537,
+    "ingreso_mediano": 98690,
+    "ingreso_moe": 15067,
+    "edad_mediana": 39.9,
+    "hogares": 481
+  },
+  {
+    "geoid": "040270118022",
+    "name": "Block Group 2; Census Tract 118.02; Yuma County; Arizona",
+    "poblacion": 1442,
+    "poblacion_moe": 549,
+    "ingreso_mediano": 71477,
+    "ingreso_moe": 44716,
+    "edad_mediana": 34.4,
+    "hogares": 437
+  },
+  {
+    "geoid": "040270121001",
+    "name": "Block Group 1; Census Tract 121; Yuma County; Arizona",
+    "poblacion": 497,
+    "poblacion_moe": 235,
+    "ingreso_mediano": 72712,
+    "ingreso_moe": 5249,
+    "edad_mediana": 22.3,
+    "hogares": 172
+  },
+  {
+    "geoid": "040270121002",
+    "name": "Block Group 2; Census Tract 121; Yuma County; Arizona",
+    "poblacion": 517,
+    "poblacion_moe": 277,
+    "ingreso_mediano": 42784,
+    "ingreso_moe": 11534,
+    "edad_mediana": 40.7,
+    "hogares": 169
+  },
+  {
+    "geoid": "040279800031",
+    "name": "Block Group 1; Census Tract 9800.03; Yuma County; Arizona",
+    "poblacion": 0,
+    "poblacion_moe": 14,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": null,
+    "hogares": 0
+  },
+  {
+    "geoid": "040279800041",
+    "name": "Block Group 1; Census Tract 9800.04; Yuma County; Arizona",
+    "poblacion": 0,
+    "poblacion_moe": 14,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": null,
+    "hogares": 0
+  },
+  {
+    "geoid": "040279800051",
+    "name": "Block Group 1; Census Tract 9800.05; Yuma County; Arizona",
+    "poblacion": 241,
+    "poblacion_moe": 32,
+    "ingreso_mediano": null,
+    "ingreso_moe": null,
+    "edad_mediana": 40.7,
+    "hogares": 0
+  },
+  {
+    "geoid": "040279800061",
+    "name": "Block Group 1; Census Tract 9800.06; Yuma County; Arizona",
+    "poblacion": 4172,
+    "poblacion_moe": 446,
+    "ingreso_mediano": 58458,
+    "ingreso_moe": 7636,
+    "edad_mediana": 22.4,
+    "hogares": 1100
+  }
+]

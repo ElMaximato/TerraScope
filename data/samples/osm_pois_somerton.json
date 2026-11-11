@@ -1,0 +1,995 @@
+[
+  {
+    "type": "node",
+    "id": 2460999498,
+    "lat": 32.5962721,
+    "lon": -114.7082822,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:country": "US",
+      "addr:housenumber": "251",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "addr:unit": "E",
+      "amenity": "fast_food",
+      "brand": "Jack in the Box",
+      "brand:wikidata": "Q1538507",
+      "cuisine": "burger",
+      "name": "Jack in the Box",
+      "phone": "+1 928-722-5695",
+      "takeaway": "yes",
+      "website": "https://locations.jackinthebox.com/us/az/somerton/251-e-main-st"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2462054048,
+    "lat": 32.5962088,
+    "lon": -114.7025397,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:country": "US",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "amenity": "fast_food",
+      "brand": "Little Caesars",
+      "brand:wikidata": "Q1393809",
+      "cuisine": "pizza",
+      "name": "Little Caesars",
+      "takeaway": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2892653128,
+    "lat": 32.596118,
+    "lon": -114.7059701,
+    "tags": {
+      "addr:housenumber": "445",
+      "addr:postcode": "85350",
+      "addr:street": "East Main Street",
+      "amenity": "police",
+      "name": "Somerton Public Safety Building"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11196389410,
+    "lat": 32.5964109,
+    "lon": -114.6867662,
+    "tags": {
+      "amenity": "place_of_worship",
+      "religion": "christian"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11735584456,
+    "lat": 32.5968666,
+    "lon": -114.7115433,
+    "tags": {
+      "addr:city": "San Luis",
+      "addr:housenumber": "151",
+      "addr:postcode": "85349",
+      "addr:state": "AZ",
+      "addr:street": "South Oak Avenue",
+      "amenity": "clinic",
+      "healthcare": "clinic",
+      "name": "Regional Center for Border Health",
+      "website": "https://www.rcfbh.org/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12957932401,
+    "lat": 32.6034637,
+    "lon": -114.711826,
+    "tags": {
+      "addr:housenumber": "240",
+      "addr:postcode": "85350",
+      "addr:street": "West Canal Street",
+      "amenity": "library",
+      "name": "Yuma County Somerton Library"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12957933801,
+    "lat": 32.596165,
+    "lon": -114.7036171,
+    "tags": {
+      "addr:housenumber": "611",
+      "addr:postcode": "85350",
+      "addr:street": "East Main Street",
+      "amenity": "fast_food",
+      "cuisine": "mexican",
+      "name": "El Buen Taquito Extra"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12957934001,
+    "lat": 32.5962037,
+    "lon": -114.7038999,
+    "tags": {
+      "addr:housenumber": "611",
+      "addr:postcode": "85350",
+      "addr:street": "East Main Street",
+      "amenity": "fuel",
+      "brand": "Marathon",
+      "brand:wikidata": "Q458363",
+      "name": "Marathon"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12957934701,
+    "lat": 32.5959778,
+    "lon": -114.7102662,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "125",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "name": "Del Sol",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12957937701,
+    "lat": 32.5973178,
+    "lon": -114.7112289,
+    "tags": {
+      "addr:housenumber": "143",
+      "addr:postcode": "85350",
+      "addr:street": "North State Ave",
+      "amenity": "townhall",
+      "name": "Somerton City Hall"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12958123901,
+    "lat": 32.5972399,
+    "lon": -114.7058984,
+    "tags": {
+      "addr:housenumber": "450",
+      "addr:postcode": "85350",
+      "addr:street": "East Main Street",
+      "amenity": "post_office",
+      "name": "Somerton Post Office",
+      "operator": "United States Postal Service",
+      "operator:short": "USPS",
+      "operator:type": "public",
+      "operator:wikidata": "Q668687"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12958133501,
+    "lat": 32.5962344,
+    "lon": -114.707413,
+    "tags": {
+      "addr:housenumber": "305",
+      "addr:postcode": "85350",
+      "addr:street": "East Main Street",
+      "brand": "O'Reilly Auto Parts",
+      "brand:wikidata": "Q7071951",
+      "name": "O'Reilly Auto Parts",
+      "shop": "car_parts"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12958135701,
+    "lat": 32.5977704,
+    "lon": -114.709915,
+    "tags": {
+      "addr:housenumber": "104",
+      "addr:postcode": "85350",
+      "addr:street": "West Spring Street",
+      "name": "Chava's Auto Services",
+      "shop": "car_repair"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12958139801,
+    "lat": 32.5896229,
+    "lon": -114.7093735,
+    "tags": {
+      "addr:housenumber": "109",
+      "addr:postcode": "85350",
+      "addr:street": "East Cactus Street",
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "name": "Sushi House"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12959717101,
+    "lat": 32.5964053,
+    "lon": -114.7100368,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "125",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "amenity": "ice_cream",
+      "brand": "La Michoacana",
+      "brand:wikidata": "Q17118857",
+      "name": "La Michoacana",
+      "website": "https://michoacanaplus.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13333132160,
+    "lat": 32.5910138,
+    "lon": -114.7093599,
+    "tags": {
+      "name": "Express Market",
+      "shop": "convenience"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13333132197,
+    "lat": 32.5961883,
+    "lon": -114.7023389,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:state": "AZ",
+      "brand": "Cricket Wireless",
+      "brand:wikidata": "Q5184987",
+      "name": "Cricket Wireless",
+      "shop": "mobile_phone",
+      "short_name": "Cricket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13333132198,
+    "lat": 32.5962404,
+    "lon": -114.7021677,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:state": "AZ",
+      "amenity": "fast_food",
+      "brand": "Subway",
+      "brand:wikidata": "Q244457",
+      "cuisine": "sandwich",
+      "name": "Subway",
+      "takeaway": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13336931343,
+    "lat": 32.5959981,
+    "lon": -114.7037765,
+    "tags": {
+      "shop": "convenience"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13336931344,
+    "lat": 32.5958515,
+    "lon": -114.7061113,
+    "tags": {
+      "amenity": "fire_station",
+      "name": "Somerton/Cocopah Fire Department"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13336931396,
+    "lat": 32.5963427,
+    "lon": -114.7186291,
+    "tags": {
+      "shop": "alcohol"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13417149918,
+    "lat": 32.5962459,
+    "lon": -114.701687,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "725",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "East Main Street",
+      "addr:unit": "13C",
+      "amenity": "veterinary",
+      "check_date": "2025-12-30",
+      "contact:email": "info@thepetclinic.vet",
+      "contact:facebook": "https://www.facebook.com/TPC.SomertonVet",
+      "currency:XBT": "yes",
+      "name": "The Pet Clinic",
+      "opening_hours": "Mo-Fr 08:00-17:00",
+      "payment:lightning": "yes",
+      "payment:lightning:operator": "square",
+      "payment:lightning_contactless": "no",
+      "payment:onchain": "no",
+      "phone": "+1-928-315-6600",
+      "website": "https://www.thepetclinic.vet"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13427947217,
+    "lat": 32.5982438,
+    "lon": -114.7257268,
+    "tags": {
+      "amenity": "clinic",
+      "healthcare": "clinic",
+      "name": "Sunset Health"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13510832184,
+    "lat": 32.5968693,
+    "lon": -114.7091818,
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "amenity": "fuel",
+      "brand": "Chevron",
+      "brand:wikidata": "Q319642",
+      "name": "Chevron"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497880,
+    "center": {
+      "lat": 32.598391,
+      "lon": -114.7427262
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497881,
+    "center": {
+      "lat": 32.5977519,
+      "lon": -114.74135
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497882,
+    "center": {
+      "lat": 32.5975656,
+      "lon": -114.7427328
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497883,
+    "center": {
+      "lat": 32.5986654,
+      "lon": -114.7399736
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497884,
+    "center": {
+      "lat": 32.598495,
+      "lon": -114.7401038
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497885,
+    "center": {
+      "lat": 32.5983392,
+      "lon": -114.7407109
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497886,
+    "center": {
+      "lat": 32.5980005,
+      "lon": -114.7413495
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497887,
+    "center": {
+      "lat": 32.597254,
+      "lon": -114.7401392
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497888,
+    "center": {
+      "lat": 32.598809,
+      "lon": -114.7421578
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497889,
+    "center": {
+      "lat": 32.5987956,
+      "lon": -114.74047
+    },
+    "tags": {
+      "amenity": "parking",
+      "capacity": "8",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497890,
+    "center": {
+      "lat": 32.5972075,
+      "lon": -114.7427372
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497891,
+    "center": {
+      "lat": 32.5981564,
+      "lon": -114.7399647
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497892,
+    "center": {
+      "lat": 32.5981801,
+      "lon": -114.7400957
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497893,
+    "center": {
+      "lat": 32.5980047,
+      "lon": -114.7399451
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497894,
+    "center": {
+      "lat": 32.598323,
+      "lon": -114.7414179
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497895,
+    "center": {
+      "lat": 32.5977355,
+      "lon": -114.739762
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 388497896,
+    "center": {
+      "lat": 32.5972376,
+      "lon": -114.7414468
+    },
+    "tags": {
+      "amenity": "parking",
+      "parking": "surface",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1232310706,
+    "center": {
+      "lat": 32.5971329,
+      "lon": -114.7040127
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "620",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "East Main Street",
+      "amenity": "fast_food",
+      "brand": "Burger King",
+      "brand:wikidata": "Q177054",
+      "building": "yes",
+      "cuisine": "burger",
+      "delivery": "yes",
+      "drive_through": "yes",
+      "internet_access": "wlan",
+      "layer": "-1",
+      "name": "Burger King",
+      "opening_hours": "Mo-Sa 06:00-22:00; Su 07:00-22:00",
+      "phone": "+1 928-323-3212",
+      "ref": "25055",
+      "takeaway": "yes",
+      "website": "https://www.bk.com/store-locator/store/restaurant_80726"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1235077372,
+    "center": {
+      "lat": 32.5959576,
+      "lon": -114.7068529
+    },
+    "tags": {
+      "brand": "Dollar General",
+      "brand:wikidata": "Q145168",
+      "building": "yes",
+      "name": "Dollar General",
+      "shop": "variety_store",
+      "website": "https://www.dollargeneral.com/store-directory/az/somerton/6779"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1235145514,
+    "center": {
+      "lat": 32.5961291,
+      "lon": -114.7047513
+    },
+    "tags": {
+      "addr:housenumber": "531",
+      "addr:state": "AZ",
+      "addr:street": "East Main Street",
+      "brand": "Family Dollar",
+      "brand:wikidata": "Q5433101",
+      "building": "yes",
+      "name": "Family Dollar",
+      "shop": "variety_store"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053420,
+    "center": {
+      "lat": 32.598633,
+      "lon": -114.7152062
+    },
+    "tags": {
+      "amenity": "school",
+      "name": "Desert Sonora Elementary School"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053425,
+    "center": {
+      "lat": 32.6011954,
+      "lon": -114.7205646
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:state": "AZ",
+      "amenity": "school",
+      "name": "Somerton High School"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053426,
+    "center": {
+      "lat": 32.6056832,
+      "lon": -114.7114897
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "North Somerton Avenue",
+      "amenity": "school",
+      "name": "Somerton Middle School"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053427,
+    "center": {
+      "lat": 32.595691,
+      "lon": -114.7215809
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:state": "AZ",
+      "amenity": "school",
+      "name": "Bravie T. Soto Elementary School"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053428,
+    "center": {
+      "lat": 32.5883769,
+      "lon": -114.7077517
+    },
+    "tags": {
+      "amenity": "school",
+      "name": "Tierra Del Sol Elementary School"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1437053429,
+    "center": {
+      "lat": 32.5992062,
+      "lon": -114.7172618
+    },
+    "tags": {
+      "amenity": "school",
+      "name": "Valle Del Encanto Learning Center"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1450791946,
+    "center": {
+      "lat": 32.5970651,
+      "lon": -114.7093412
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "brand": "Chevron",
+      "brand:wikidata": "Q319642",
+      "building": "roof",
+      "name": "Chevron",
+      "shop": "convenience"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1453820749,
+    "center": {
+      "lat": 32.5971411,
+      "lon": -114.7049335
+    },
+    "tags": {
+      "amenity": "bank",
+      "building": "yes",
+      "name": "Avenir Financial"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1453820753,
+    "center": {
+      "lat": 32.5963609,
+      "lon": -114.7159263
+    },
+    "tags": {
+      "brand": "NAPA Auto Parts",
+      "brand:wikidata": "Q6970842",
+      "building": "yes",
+      "name": "NAPA Auto Parts",
+      "shop": "car_parts"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1453820754,
+    "center": {
+      "lat": 32.5963364,
+      "lon": -114.7136225
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "415",
+      "addr:postcode": "85349",
+      "addr:state": "AZ",
+      "addr:street": "West Main Street",
+      "brand": "Ace Hardware",
+      "brand:wikidata": "Q4672981",
+      "building": "yes",
+      "name": "Ace Hardware",
+      "shop": "doityourself"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1454252207,
+    "center": {
+      "lat": 32.5961284,
+      "lon": -114.7219579
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1454252208,
+    "center": {
+      "lat": 32.5962225,
+      "lon": -114.7212716
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1463848863,
+    "center": {
+      "lat": 32.593283,
+      "lon": -114.7115132
+    },
+    "tags": {
+      "amenity": "toilets",
+      "building": "yes"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1463848864,
+    "center": {
+      "lat": 32.5934474,
+      "lon": -114.7115172
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1463848865,
+    "center": {
+      "lat": 32.5930353,
+      "lon": -114.7100801
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1470097832,
+    "center": {
+      "lat": 32.5993035,
+      "lon": -114.7224502
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1470097833,
+    "center": {
+      "lat": 32.6015982,
+      "lon": -114.7205435
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1470097834,
+    "center": {
+      "lat": 32.6034055,
+      "lon": -114.7203178
+    },
+    "tags": {
+      "amenity": "parking"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1495341998,
+    "center": {
+      "lat": 32.5971088,
+      "lon": -114.7190062
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "West Main Street",
+      "amenity": "fuel",
+      "brand": "Chevron",
+      "brand:wikidata": "Q319642",
+      "building": "roof",
+      "name": "Chevron"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1495341999,
+    "center": {
+      "lat": 32.5974254,
+      "lon": -114.7189855
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "West Main Street",
+      "brand": "Chevron",
+      "brand:wikidata": "Q319642",
+      "building": "yes",
+      "name": "Chevron",
+      "shop": "convenience"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1528933750,
+    "center": {
+      "lat": 32.5960616,
+      "lon": -114.7091879
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "brand": "Circle K",
+      "brand:wikidata": "Q3268010",
+      "building": "retail",
+      "name": "Circle K",
+      "shop": "convenience",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1528933751,
+    "center": {
+      "lat": 32.5963261,
+      "lon": -114.7091807
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "Main Street",
+      "amenity": "fuel",
+      "brand": "Circle K",
+      "brand:wikidata": "Q3268010",
+      "building": "roof",
+      "name": "Circle K",
+      "source": "Bing"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1548490209,
+    "center": {
+      "lat": 32.5971716,
+      "lon": -114.7223429
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:housenumber": "1198",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "addr:street": "West Main Street",
+      "amenity": "fast_food",
+      "brand": "McDonald's",
+      "brand:wikidata": "Q38076",
+      "building": "yes",
+      "cuisine": "burger",
+      "drive_through": "yes",
+      "name": "McDonald's",
+      "takeaway": "yes",
+      "website": "https://www.mcdonalds.com/us/en-us/location/az/somerton/1198-w-main-street/44100.html"
+    }
+  },
+  {
+    "type": "way",
+    "id": 1548490210,
+    "center": {
+      "lat": 32.597228,
+      "lon": -114.7205378
+    },
+    "tags": {
+      "addr:city": "Somerton",
+      "addr:postcode": "85350",
+      "addr:state": "AZ",
+      "brand": "AutoZone",
+      "brand:wikidata": "Q4826087",
+      "building": "yes",
+      "name": "AutoZone",
+      "shop": "car_parts"
+    }
+  }
+]

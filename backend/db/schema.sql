@@ -1,0 +1,1 @@
+-- OBSOLETO. El esquema ahora vive en db/migrations/ y se aplica con: npm run db:setup
